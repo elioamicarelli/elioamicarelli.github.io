@@ -1,0 +1,11 @@
+---
+title: "SYDACT"
+subtitle: "Systems, Data, and Behavior"
+listing:
+  contents: "SYDACT/*/*qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+page-layout: full
+
+---

@@ -1,0 +1,44 @@
+---
+title: "About"
+page-layout: article
+toc: false
+---
+
+::: {.about-page}
+
+Elio Amicarelli is an Applied Statistician and Product Data Scientist. With over 10 years of professional experience, Elio has worked on projects across diverse industries, holding roles ranging from Statistical Data Analyst to Analytics and Data Science Leader. His partners include multinational companies in both digital and physical domains, governmental organizations, research centers, renowned consulting firms, and startups.
+
+Elio's ability to drive value through diverse data applications is reflected in his track record, which includes: building end-to-end big data analytics pipelines, translating app usage data into impactful behavioral insights, optimizing global supply chains leveraging RFID, and conducting specialized research with diverse sources such as LiDAR, spatio-temporal datasets, and unstructured data. Furthermore, Elio has designed and managed 50+ statistical experiments in both digital and physical environments.
+
+Beyond Statistics and Data Analysis, Elio possesses deep expertise in Machine Learning and Analytics Engineering. This technical breadth enables him to bridge gaps and collaborate effectively across multidisciplinary data teams. Thanks to his seniority, he is accustomed to thinking strategically while formulating pragmatic business solutions.
+
+Aside from Data, Elio is an avid reader of Game Design, a craft he profoundly respects and enjoys perfecting.
+
+::: {.client-logos-carousel}
+## Trusted by
+```{=html}
+<div class="carousel-container">
+  <div class="carousel-track">
+    <img src="figs/dash.png" alt="Dash Games">
+    <img src="figs/nttdata.png" alt="NTT Data">
+    <img src="figs/king.png" alt="King">
+    <img src="figs/inditex.png" alt="Inditex">
+    <img src="figs/mit.png" alt="MIT">
+    <img src="figs/uva.png" alt="UvA">
+    <img src="figs/uessex.png" alt="University of Essex">
+    <img src="figs/mae.png" alt="MAE">
+    <!-- Duplicate logos for seamless looping -->
+    <img src="figs/dash.png" alt="Dash Games">
+    <img src="figs/nttdata.png" alt="NTT Data">
+    <img src="figs/king.png" alt="King">
+    <img src="figs/inditex.png" alt="Inditex">
+    <img src="figs/mit.png" alt="MIT">
+    <img src="figs/uva.png" alt="UvA">
+    <img src="figs/uessex.png" alt="University of Essex">
+    <img src="figs/mae.png" alt="MAE">
+  </div>
+</div>
+```
+:::
+
+:::

@@ -1,0 +1,71 @@
+project:
+  type: website
+  output-dir: _site
+website:
+  title: "Elio Amicarelli"
+  favicon: figs/fv.png
+  navbar:
+    left:
+
+      - href: SYDACT.qmd
+        text: Blog
+      - href: about.qmd
+        text: About
+
+
+format:
+  html:
+    theme:
+      dark:
+        - styles-dark.scss
+      light:
+        - flatly
+        - styles-light.scss
+    highlight-style: dracula
+    css: styles.css
+    toc: true
+    include-after-body:
+      text: |
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // --- Logic for Blog Posts (Post Pages) ---
+          const originalCats = document.querySelector('.quarto-title-block .quarto-categories');
+          const postTarget = document.getElementById('quarto-document-content');
+          if (originalCats && postTarget) {
+            const footerDiv = document.createElement("div");
+            footerDiv.className = "post-footer-categories";
+            footerDiv.appendChild(document.createElement("hr"));
+            
+            const clickableCats = document.createElement("div");
+            clickableCats.className = "quarto-categories";
+            
+            originalCats.querySelectorAll('.quarto-category').forEach(cat => {
+              const link = document.createElement("a");
+              link.href = '/SYDACT.html';
+              link.className = "quarto-category";
+              link.textContent = cat.textContent.trim();
+              clickableCats.appendChild(link);
+            });
+            
+            footerDiv.appendChild(clickableCats);
+            postTarget.appendChild(footerDiv);
+          }
+
+          // --- Logic for Blog Listing Page (Main Blog Page) ---
+          const listingPosts = document.querySelectorAll('.quarto-post');
+          listingPosts.forEach(post => {
+            const categories = post.querySelector('.listing-categories');
+            const description = post.querySelector('.listing-description');
+            
+            if (categories && description) {
+              // Move categories after the description
+              description.parentNode.insertBefore(categories, description.nextSibling);
+              // Add top margin to categories for spacing
+              categories.style.marginTop = "0.5em";
+            }
+          });
+        });
+        </script>
+execute:
+  freeze: auto
+

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Birthstone&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fira+Code:wght@300..700&family=Lugrasimo&display=swap');
+.quarto-title-block.default {
+  text-align: center;
+}
+
+.quarto-title-block.default .title {
+  font-size: 2.5em !important; /* Adjust as needed */
+}
+
+.quarto-title-block.default .subtitle.lead {
+  font-size: 1.2em !important; /* Adjust as needed */
+}
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify; /* optional, for balanced look */
+}
+
+.title-block-banner {
+  background-color: var(--light-green-bg);
+}
+
+.quarto-title-block .description,
+.quarto-title-block .quarto-categories {
+  display: none !important;
+}
+
+.post-footer-categories {
+  margin-top: 3em;
+}
+
+.post-footer-categories .quarto-categories {
+  display: flex !important;
+  margin-bottom: 2em;
+}
+
+.post-footer-categories .quarto-categories .quarto-category {
+  color: inherit;
+  border: 1px solid var(--quarto-body-color);
+  border-radius: 4px;
+  padding: 0.15em 0.6em !important;
+  margin-right: 0.5em;
+  font-size: 0.75em !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.listing-title {
+  margin-bottom: 0.5em !important;
+  font-weight: bold !important;
+}
+
+/* Client Logos Carousel */
+.client-logos-carousel {
+  margin-top: 1em;
+  padding: 2em 0;
+  background-color: var(--quarto-body-bg); /* Use theme background */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.client-logos-carousel h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: var(--quarto-body-color);
+  border-bottom: none; /* Remove horizontal line below title */
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  width: fit-content; /* Allow content to define width */
+  animation: scroll-left 60s linear infinite; /* Adjusted duration to slow down */
+}
+
+.carousel-track img {
+  width: 180px; /* Increased logo width */
+  height: 100px; /* Increased logo height */
+  object-fit: contain;
+  margin: 0 1em; /* Reduced space between logos */
+  filter: grayscale(100%); /* Optional: grayscale logos */
+  transition: filter 0.3s ease;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.carousel-track img:hover {
+  filter: grayscale(0%); /* Optional: color on hover */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move half the track's width for seamless loop */
+  }
+}

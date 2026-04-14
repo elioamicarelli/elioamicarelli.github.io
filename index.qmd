@@ -1,0 +1,22 @@
+---
+title: "Elio Amicarelli"
+subtitle: "I lead data projects, unlock behavioral insights, and design games in-between"
+image: "figs/profile.jpeg"
+toc: false
+about:
+  template: trestles
+  image-shape: round
+  image-width: 15em
+---
+
+I'm Elio, an **Applied Statistician** and **Data Scientist** with 10+ years of experience in leveraging data to build better products and drive strategic decisions. My expertise lies in developing end-to-end analytics, analyzing systems and users' behavior, using data to move teams toward impactful directions and help them achieve their goals.
+
+My profile is a perfect match for:
+
+- **Startups** needing a dedicated expert to own and lead data science initiatives for a competitive edge.
+
+- **Scale-ups** wanting to scale data-driven decision making across the organization.
+
+- **Enterprises** seeking to bridge the gap between complex data and strategic business outcomes.
+
+How can I help you? Feel free to reach out on [LinkedIn](https://linkedin.com/in/elioamicarelli){target="_blank"} or book a slot on my [calendar](https://calendly.com/elioamicarelli){target="_blank"}.

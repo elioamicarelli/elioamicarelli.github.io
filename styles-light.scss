@@ -1,0 +1,75 @@
+/*-- scss:defaults --*/
+
+// Import Google font-size:
+
+$cream: #fffbf2;
+$light-blue: #c0d6df;
+$dark-blue: #12244d;
+$main-blue: #27548a;
+$sand: #dda853;
+$dark-orange: #d95f0e;
+$lilac: #EFEDF5;
+$neon-green: #00ff00;
+$purple: #800080;
+$light-green-bg: #e2ede5; // Adding the light green background color
+
+// Main Colors
+$body-bg: $cream;
+$body-color: $dark-blue;
+$link-color: $main-blue;
+$navbar-bg: $cream;
+$navbar-fg: $dark-blue;
+$navbar-hl: $main-blue;
+
+// Inline code
+$code-bg: $cream;
+$code-color: $dark-blue;
+$code-block-bg: $dark-blue;
+$code-block-color: $dark-orange;
+
+// fonts
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 110% !important;
+}
+
+// abstract font
+div {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 100%;
+}
+
+// table font
+table, th, td {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 105% !important;
+}
+
+// font for Code
+pre, code, .sourceCode pre, .sourceCode code, .highlight code {
+  font-family: "Fira Code", monospace !important;
+}
+
+// navbar font
+.navbar-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 110%;
+}
+// navbar body font
+nav.navbar .navbar-nav .nav-link {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 110% !important;
+}
+
+// Categories
+.listing-category, 
+.quarto-categories .quarto-category,
+.quarto-categories a.quarto-category {
+  color: #444 !important; // Dark gray
+  border-color: #444 !important;
+}
+
+.listing-title, .listing-title a {
+  color: $body-color !important;
+  font-weight: bold !important;
+}

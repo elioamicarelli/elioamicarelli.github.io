@@ -1,0 +1,45 @@
+---
+title: "Your Model Residuals are Not Just Noise"
+author: "Elio Amicarelli"
+description: "Model residuals are more than just inconvenient noise. In this short analytical post, I demonstrate how they hold the key to improving model quality and performance."
+categories: [statistical modeling, regression, residuals]
+image: ../../figs/e.png
+---
+
+After fitting a model, data scientists often focus on predicted values and variable importance, frequently treating residuals as mere inconvenient noise. In this short analytical post, I illustrate that residuals are actually a very valuable component that holds all the secrets to improve your model's quality and performance.
+
+# Setting the stage
+
+For my discussion, I define two linear models: the **True Model**, which represents how reality actually works (thus including all variables influencing the response of interest), and the **Estimation Model**, which is the estimation strategy the modeler will apply on the observed data.
+
+The True Model:
+$$Y = \alpha + \beta_i X_i + \gamma_i Z_i + \epsilon \quad (1)$$
+Here, $X_i$ and $Z_i$ represent the $i$th variable of the respective variable sets. $Z$ consists of variables that are part of the true model but will be omitted in the Estimation Model. Also, $\epsilon$ is the irreducible error, that is, true random noise.
+
+The Estimation Model:
+$$Y = \alpha + \beta_i X_i + e \quad (2)$$
+For various reasons, such as lacking access to data for $Z$ or simply being unaware that $Z$ is a potentially important set of variables, the modeler's estimation strategy only includes the variables $X$. Here, the model error $e$ embodies the intuition that the relationship between $X$ and $Y$ is not exact and fully deterministic. Post-fitting, the component $e$ will indeed be reflected in the model residuals $Y - \hat{Y}$.
+
+# Analytical procedure
+
+In order to understand the value of post-fitting residuals, start by **isolating the observed variables from the True Model** of Equation (1):
+$$\beta_i X_i = Y - \alpha - \gamma_i Z_i - \epsilon \quad (3)$$
+
+Then, **isolate the residuals from the Estimation Model** of Equation (2):
+$$e = Y - \alpha - \beta_i X_i \quad (4)$$
+
+Finally, **plug the relationship between the X variables and the other components of the True Model into the residuals equation**:
+$$e = Y - \alpha - (Y - \alpha - \gamma_i Z - \epsilon) \quad (5)$$
+
+# Understanding the residuals
+
+Simplifying Equation (5), the $Y$ and $\alpha$ terms cancel out, leaving us with a clear idea of what the residuals "collect" after fitting the Estimation Model:
+$$e = \gamma_i Z_i + \epsilon$$
+
+This result demonstrates that the residuals are not just inconvenient noise. They are instead the repository for all aspects of the True Model that are not captured by the estimation model $\gamma_i Z_i$ as well as the irreducible error $\epsilon$.
+
+If only the modeler were equipped with the right tools, for sure they could extract valuable information from the residuals and use them to improve the model performance!
+
+# The Modeler's Lesson
+
+Unless your modeling strategy fully identifies the underlying "true" model, your post-fitting residuals carry a wealth of information that can be used to improve your model. So, don't just treat residuals as noise; instead, consider them as a powerful ally for refining your models and improving the quality of your analysis.
