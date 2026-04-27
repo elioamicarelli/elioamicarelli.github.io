@@ -3,11 +3,12 @@ project:
   output-dir: docs
 website:
   title: "Elio Amicarelli"
+  site-url: https://www.elioamicarelli.com
   favicon: figs/fv.png
   navbar:
     left:
 
-      - href: SYDACT.qmd
+      - href: SYGACT.qmd
         text: Blog
       - href: about.qmd
         text: About
@@ -41,7 +42,7 @@ format:
             
             originalCats.querySelectorAll('.quarto-category').forEach(cat => {
               const link = document.createElement("a");
-              link.href = '/SYDACT.html';
+              link.href = '/SYGACT.html';
               link.className = "quarto-category";
               link.textContent = cat.textContent.trim();
               clickableCats.appendChild(link);

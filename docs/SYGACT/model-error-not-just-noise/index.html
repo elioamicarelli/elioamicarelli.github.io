@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Elio Amicarelli">
+<meta name="description" content="Model residuals are more than just inconvenient noise. In this short analytical post, I demonstrate how they hold the key to improving model quality and performance.">
 
-<title>SYDACT – Elio Amicarelli</title>
+<title>Your Model Residuals are Not Just Noise – Elio Amicarelli</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./figs/fv.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../figs/fv.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -133,7 +104,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -303,7 +274,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Elio Amicarelli</span>
     </a>
   </div>
@@ -314,11 +285,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./SYDACT.html" aria-current="page"> 
+    <a class="nav-link" href="../../SYGACT.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -330,26 +301,50 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cmVncmVzc2lvbg==">regression <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cmVzaWR1YWxz">residuals <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3RhdGlzdGljYWwlMjBtb2RlbGluZw==">statistical modeling <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link active" data-scroll-target="#setting-the-stage">Setting the stage</a></li>
+  <li><a href="#analytical-procedure" id="toc-analytical-procedure" class="nav-link" data-scroll-target="#analytical-procedure">Analytical procedure</a></li>
+  <li><a href="#understanding-the-residuals" id="toc-understanding-the-residuals" class="nav-link" data-scroll-target="#understanding-the-residuals">Understanding the residuals</a></li>
+  <li><a href="#the-modelers-lesson" id="toc-the-modelers-lesson" class="nav-link" data-scroll-target="#the-modelers-lesson">The Modeler’s Lesson</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SYDACT</h1>
-<p class="subtitle lead">Systems, Data, and Behavior</p>
+<h1 class="title">Your Model Residuals are Not Just Noise</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">statistical modeling</div>
+    <div class="quarto-category">regression</div>
+    <div class="quarto-category">residuals</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Model residuals are more than just inconvenient noise. In this short analytical post, I demonstrate how they hold the key to improving model quality and performance.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elio Amicarelli </p>
+          </div>
+  </div>
     
   
     
@@ -360,77 +355,33 @@ window.Quarto = {
 </header>
 
 
+<p>After fitting a model, data scientists often focus on predicted values and variable importance, frequently treating residuals as mere inconvenient noise. In this short analytical post, I illustrate that residuals are actually a very valuable component that holds all the secrets to improve your model’s quality and performance.</p>
+<section id="setting-the-stage" class="level1">
+<h1>Setting the stage</h1>
+<p>For my discussion, I define two linear models: the <strong>True Model</strong>, which represents how reality actually works (thus including all variables influencing the response of interest), and the <strong>Estimation Model</strong>, which is the estimation strategy the modeler will apply on the observed data.</p>
+<p>The True Model: <span class="math display">\[Y = \alpha + \beta_i X_i + \gamma_i Z_i + \epsilon \quad (1)\]</span> Here, <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Z_i\)</span> represent the <span class="math inline">\(i\)</span>th variable of the respective variable sets. <span class="math inline">\(Z\)</span> consists of variables that are part of the true model but will be omitted in the Estimation Model. Also, <span class="math inline">\(\epsilon\)</span> is the irreducible error, that is, true random noise.</p>
+<p>The Estimation Model: <span class="math display">\[Y = \alpha + \beta_i X_i + e \quad (2)\]</span> For various reasons, such as lacking access to data for <span class="math inline">\(Z\)</span> or simply being unaware that <span class="math inline">\(Z\)</span> is a potentially important set of variables, the modeler’s estimation strategy only includes the variables <span class="math inline">\(X\)</span>. Here, the model error <span class="math inline">\(e\)</span> embodies the intuition that the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is not exact and fully deterministic. Post-fitting, the component <span class="math inline">\(e\)</span> will indeed be reflected in the model residuals <span class="math inline">\(Y - \hat{Y}\)</span>.</p>
+</section>
+<section id="analytical-procedure" class="level1">
+<h1>Analytical procedure</h1>
+<p>In order to understand the value of post-fitting residuals, start by <strong>isolating the observed variables from the True Model</strong> of Equation (1): <span class="math display">\[\beta_i X_i = Y - \alpha - \gamma_i Z_i - \epsilon \quad (3)\]</span></p>
+<p>Then, <strong>isolate the residuals from the Estimation Model</strong> of Equation (2): <span class="math display">\[e = Y - \alpha - \beta_i X_i \quad (4)\]</span></p>
+<p>Finally, <strong>plug the relationship between the X variables and the other components of the True Model into the residuals equation</strong>: <span class="math display">\[e = Y - \alpha - (Y - \alpha - \gamma_i Z - \epsilon) \quad (5)\]</span></p>
+</section>
+<section id="understanding-the-residuals" class="level1">
+<h1>Understanding the residuals</h1>
+<p>Simplifying Equation (5), the <span class="math inline">\(Y\)</span> and <span class="math inline">\(\alpha\)</span> terms cancel out, leaving us with a clear idea of what the residuals “collect” after fitting the Estimation Model: <span class="math display">\[e = \gamma_i Z_i + \epsilon\]</span></p>
+<p>This result demonstrates that the residuals are not just inconvenient noise. They are instead the repository for all aspects of the True Model that are not captured by the estimation model <span class="math inline">\(\gamma_i Z_i\)</span> as well as the irreducible error <span class="math inline">\(\epsilon\)</span>.</p>
+<p>If only the modeler were equipped with the right tools, for sure they could extract valuable information from the residuals and use them to improve the model performance!</p>
+</section>
+<section id="the-modelers-lesson" class="level1">
+<h1>The Modeler’s Lesson</h1>
+<p>Unless your modeling strategy fully identifies the underlying “true” model, your post-fitting residuals carry a wealth of information that can be used to improve your model. So, don’t just treat residuals as noise; instead, consider them as a powerful ally for refining your models and improving the quality of your analysis.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c3RhdGlzdGljYWwlMjBtb2RlbGluZyUyQ3JlZ3Jlc3Npb24lMkNyZXNpZHVhbHM=" data-listing-file-modified-sort="1773851401057" data-listing-reading-time-sort="3" data-listing-word-count-sort="465">
-<div class="thumbnail"><a href="./SYDACT/model-error-not-just-noise/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/e.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYDACT/model-error-not-just-noise/index.html" class="no-external">Your Model Residuals are Not Just Noise</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljYWwlMjBtb2RlbGluZw=='); return false;">statistical modeling</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVncmVzc2lvbg=='); return false;">regression</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzaWR1YWxz'); return false;">residuals</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYDACT/model-error-not-just-noise/index.html" class="no-external">
-<p>Model residuals are more than just inconvenient noise. In this short analytical post, I demonstrate how they hold the key to improving model quality and performance.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYDACT/model-error-not-just-noise/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="c3RhdGlzdGljYWwlMjBtb2RlbGluZyUyQ3JlZ3Jlc3Npb24lMkNyZXNpZHVhbHM=" data-listing-file-modified-sort="1773851438428" data-listing-reading-time-sort="6" data-listing-word-count-sort="1188">
-<div class="thumbnail"><a href="./SYDACT/partial-residuals/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/partial_residuals.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYDACT/partial-residuals/index.html" class="no-external">Partial Residuals in Multivariable Regression</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljYWwlMjBtb2RlbGluZw=='); return false;">statistical modeling</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVncmVzc2lvbg=='); return false;">regression</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzaWR1YWxz'); return false;">residuals</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYDACT/partial-residuals/index.html" class="no-external">
-<p>The analysis of partial residuals can reveal non-linear relationships that overall residuals might hide. In this post I simulate some scenarios to illustrate their usefulness in model diagnostics.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYDACT/partial-residuals/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -517,7 +468,7 @@ Elio Amicarelli
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/www\.elioamicarelli\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -860,7 +811,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     originalCats.querySelectorAll('.quarto-category').forEach(cat => {
       const link = document.createElement("a");
-      link.href = '/SYDACT.html';
+      link.href = '/SYGACT.html';
       link.className = "quarto-category";
       link.textContent = cat.textContent.trim();
       clickableCats.appendChild(link);

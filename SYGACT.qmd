@@ -1,8 +1,8 @@
 ---
-title: "SYDACT"
-subtitle: "Systems, Data, and Behavior"
+title: "SYGACT"
+subtitle: "Systems, Games, and Behavior"
 listing:
-  contents: "SYDACT/*/*qmd"
+  contents: "SYGACT/*/*qmd"
   sort: "date desc"
   type: default
   categories: true
