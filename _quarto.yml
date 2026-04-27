@@ -7,9 +7,6 @@ website:
   favicon: figs/fv.png
   navbar:
     left:
-
-      - href: SYGACT.qmd
-        text: Blog
       - href: about.qmd
         text: About
 
