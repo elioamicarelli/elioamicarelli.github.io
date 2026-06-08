@@ -5,6 +5,7 @@ website:
   title: "Elio Amicarelli"
   site-url: https://www.elioamicarelli.com
   favicon: figs/fv.png
+  google-analytics: "G-VLRS3DJ725"
   navbar:
     left:
       - href: about.qmd
