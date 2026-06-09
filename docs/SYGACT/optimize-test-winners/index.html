@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Elio Amicarelli">
+<meta name="dcterms.date" content="2026-06-09">
+<meta name="description" content="Big game studios don’t just declare a winner and move on. They keep digging. Discover why optimizing a winning feature can double its impact and how small teams can do it efficiently.">
 
-<title>SYGACT – Elio Amicarelli</title>
+<title>Beyond the Winner: The Case for Optimization of Game A/B Tests – Elio Amicarelli</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +26,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./figs/fv.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../figs/fv.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLRS3DJ725"></script>
 
 <script type="text/javascript">
@@ -112,37 +84,8 @@ gtag('js', new Date());
 gtag('config', 'G-VLRS3DJ725', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -312,7 +255,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Elio Amicarelli</span>
     </a>
   </div>
@@ -323,11 +266,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./SYGACT.html" aria-current="page"> 
+    <a class="nav-link" href="../../SYGACT.html"> 
 <span class="menu-text">SYGACT</span></a>
   </li>  
 </ul>
@@ -339,27 +282,54 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TU9ERUxJTkc=">MODELING <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF">PRODUCT DATA SCIENCE <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U1BCTSUyMFNFUklFUw==">SPBM SERIES <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-value-of-optimization" id="toc-the-value-of-optimization" class="nav-link active" data-scroll-target="#the-value-of-optimization">The value of optimization</a></li>
+  <li><a href="#caveats-and-risks" id="toc-caveats-and-risks" class="nav-link" data-scroll-target="#caveats-and-risks">Caveats and risks</a></li>
+  <li><a href="#guidelines-for-small-teams" id="toc-guidelines-for-small-teams" class="nav-link" data-scroll-target="#guidelines-for-small-teams">Guidelines for small teams</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SYGACT</h1>
-<p class="subtitle lead">Systems, Games, and Behavior</p>
+<h1 class="title">Beyond the Winner: The Case for Optimization of Game A/B Tests</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">PRODUCT DATA SCIENCE</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Big game studios don’t just declare a winner and move on. They keep digging. Discover why optimizing a winning feature can double its impact and how small teams can do it efficiently.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elio Amicarelli </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 9, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -369,98 +339,33 @@ window.Quarto = {
 </header>
 
 
+<section id="the-value-of-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="the-value-of-optimization">The value of optimization</h2>
+<p>When it comes to A/B tests, here is one critical thing big game studios do that indie developers and startups frequently overlook: they optimize the test winner.</p>
+<p>If you successfully implement a gold-nugget feature in your game that tests at a nice +26% uplift in player attempts against the control group, you might be tempted to do your checks, declare a winner, roll out the feature, and blow the horn for a round of applause. But gold concentrates in localized pockets. If you find some, keep digging, because otherwise, you might be leaving even bigger opportunities untapped.</p>
+<p>Based on my direct experience, optimizing a winning feature can easily increase its uplift by half, and in some cases, even double it. When successful, optimization has the potential to not just raise the baseline of the existing uplift; instead, it can change how the winning series behaves over time, making it more stable and robust.</p>
+</section>
+<section id="caveats-and-risks" class="level2">
+<h2 class="anchored" data-anchor-id="caveats-and-risks">Caveats and risks</h2>
+<p>There are indeed some caveats and pragmatic reasons explaining why less resourceful teams tend to skip optimization and run with the loot. Time constraints and the risk of haphazard tweaks are definitely two important factors. In a mobile game, even a simple feature can be tweaked in many ways, but only a small subset of these changes will actually result in a performance improvement.</p>
+<p>Moreover, without clear test ownership, every member of the team will have a strong opinion about what could work. Instead of relying on a well-designed optimization strategy, these premises can lead to a trial-and-error discovery phase that can waste a lot of time and ultimately lead nowhere.</p>
+</section>
+<section id="guidelines-for-small-teams" class="level2">
+<h2 class="anchored" data-anchor-id="guidelines-for-small-teams">Guidelines for small teams</h2>
+<p>So, how can small teams carry out an effective and efficient optimization of a winning test feature?</p>
+<p>The answer is to stand on the shoulders of giants. Winning streaks, racing competitions, welcome-back rewards, gacha systems, and special levels are some of the proven features that are part of the playbook that experimentation and product teams from big companies have learned to design and optimize extremely well, thanks to their resources and player volume.</p>
+<p>From this perspective, each feature in the playbook can be optimized tackling three different aspects:</p>
+<ul>
+<li>Presentation: How the feature is introduced to players, and which visual elements underpin the correct comprehension</li>
+<li>Mechanics: How the mechanisms and flow of the feature work</li>
+<li>Behavior: The behavioral drivers that the features taps into and should effectively activate</li>
+</ul>
+<p>A winner can still have weak spots across these elements, weaknesses that knowledge of the playbook can identify already in the stage of featured design stage or quickly uncover during optimization with specific, targeted data analysis.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF" data-listing-date-sort="1780956000000" data-listing-file-modified-sort="1781018814254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="427">
-<div class="thumbnail"><a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/flask.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/optimize-test-winners/index.html" class="no-external">Beyond the Winner: The Case for Optimization of Game A/B Tests</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF'); return false;">PRODUCT DATA SCIENCE</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-<p>Big game studios don’t just declare a winner and move on. They keep digging. Discover why optimizing a winning feature can double its impact and how small teams can do it efficiently.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TU9ERUxJTkclMkNTUEJNJTIwU0VSSUVT" data-listing-date-sort="1767222000000" data-listing-file-modified-sort="1781023964850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1073">
-<div class="thumbnail"><a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/bookies_1.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TU9ERUxJTkc='); return false;">MODELING</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U1BCTSUyMFNFUklFUw=='); return false;">SPBM SERIES</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
-<p>How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF" data-listing-date-sort="1749506400000" data-listing-file-modified-sort="1781019420311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="756">
-<div class="thumbnail"><a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/flask.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">5 Reasons Businesses Fall Short in Leveraging A/B Testing and What to Do About Them</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF'); return false;">PRODUCT DATA SCIENCE</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-<p>Why do some companies fail to unlock the potential of A/B testing? I explore five overlooked conditions that hinder growth and how leadership can fix them.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

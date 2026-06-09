@@ -10,6 +10,8 @@ website:
     left:
       - href: about.qmd
         text: About
+      - href: SYGACT.qmd
+        text: SYGACT
 
 
 format:

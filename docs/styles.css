@@ -51,6 +51,46 @@
   font-weight: bold !important;
 }
 
+.quarto-title-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  align-items: baseline;
+}
+
+.quarto-title-meta > div {
+  display: flex;
+  gap: 0.5em;
+  align-items: baseline;
+}
+
+.quarto-title-meta-heading {
+  text-transform: uppercase;
+  margin-top: 0 !important;
+}
+
+.quarto-title-meta-contents p {
+  margin: 0 !important;
+}
+
+.quarto-title-meta-heading:has(+ .quarto-title-meta-contents .date),
+.quarto-title-meta-contents:has(.date) {
+  display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  border-bottom: none !important;
+}
+
+figcaption, .figure-caption {
+  text-align: center !important;
+}
+
+/* Align categories listing with the first post */
+.quarto-listing-category-title {
+  margin-top: 8.5em;
+}
+
 /* Client Logos Carousel */
 .client-logos-carousel {
   margin-top: 1em;

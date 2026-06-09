@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Elio Amicarelli">
+<meta name="dcterms.date" content="2026-01-01">
+<meta name="description" content="How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.">
 
-<title>SYGACT – Elio Amicarelli</title>
+<title>Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes – Elio Amicarelli</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +26,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./figs/fv.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../figs/fv.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2ff81c2e5dfd9e56c4f590b9591e1eb8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-43e10a0ac068cd09a2a908d494383ef9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-50283766d30623809717dbf8f531486a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VLRS3DJ725"></script>
 
 <script type="text/javascript">
@@ -142,7 +114,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -312,7 +284,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Elio Amicarelli</span>
     </a>
   </div>
@@ -323,11 +295,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./SYGACT.html" aria-current="page"> 
+    <a class="nav-link" href="../../SYGACT.html"> 
 <span class="menu-text">SYGACT</span></a>
   </li>  
 </ul>
@@ -339,27 +311,60 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TU9ERUxJTkc=">MODELING <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF">PRODUCT DATA SCIENCE <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U1BCTSUyMFNFUklFUw==">SPBM SERIES <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-bookmakers-problem" id="toc-the-bookmakers-problem" class="nav-link active" data-scroll-target="#the-bookmakers-problem">The Bookmaker’s Problem</a>
+  <ul class="collapse">
+  <li><a href="#defining-a-book" id="toc-defining-a-book" class="nav-link" data-scroll-target="#defining-a-book">Defining a Book</a></li>
+  </ul></li>
+  <li><a href="#the-overround" id="toc-the-overround" class="nav-link" data-scroll-target="#the-overround">The Overround</a></li>
+  <li><a href="#empirical-evidence" id="toc-empirical-evidence" class="nav-link" data-scroll-target="#empirical-evidence">Empirical Evidence</a></li>
+  <li><a href="#simulation-study" id="toc-simulation-study" class="nav-link" data-scroll-target="#simulation-study">Simulation Study</a></li>
+  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final Remarks</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SYGACT</h1>
-<p class="subtitle lead">Systems, Games, and Behavior</p>
+<h1 class="title">Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">MODELING</div>
+    <div class="quarto-category">SPBM SERIES</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elio Amicarelli </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -369,98 +374,80 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF" data-listing-date-sort="1780956000000" data-listing-file-modified-sort="1781018814254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="427">
-<div class="thumbnail"><a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/flask.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/optimize-test-winners/index.html" class="no-external">Beyond the Winner: The Case for Optimization of Game A/B Tests</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF'); return false;">PRODUCT DATA SCIENCE</div>
-
+<p>This is the first in a series of posts on modeling fixed-odds betting markets. To understand how these markets function, we must first look at the ‘supply’ side, the bookmaker, and one fundamental mechanism they use to survive: <strong>the Overround</strong>.</p>
+<p>In fixed-odds betting markets, bookmakers offer positive payouts for mutually exclusive outcomes of a sporting event. This means they are guaranteed to pay out to some bettors based on the outcome that occurs.</p>
+<p>So, how do bookmakers ensure that these guaranteed payouts don’t lead to losses that could put them out of business, and instead, remain profitable?</p>
+<section id="the-bookmakers-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-bookmakers-problem">The Bookmaker’s Problem</h2>
+<p>I stick with the decimal representation of odds so that <span class="math inline">\(O_i = 1.5\)</span> means that each unit wagered on the outcome <span class="math inline">\(R_i\)</span> will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.</p>
+<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
+<p>A bookmaker, however, might offer odds of 1.90 for both. Now, they still cash in <span class="math inline">\(\$200\)</span>, but only pay out <span class="math inline">\(\$190\)</span> to the winner. That <span class="math inline">\(\$10\)</span> difference is the <strong>Overround</strong> in action. It ensures, under certain conditions, that regardless of how the coin lands, the bookmaker retains a portion of the total wagers.</p>
+<p>The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!</p>
+<p>What follow in an analytical and empirical analysis of the overround.</p>
+<section id="defining-a-book" class="level3">
+<h3 class="anchored" data-anchor-id="defining-a-book">Defining a Book</h3>
+<p>For a future event with a number of <span class="math inline">\(N\)</span> mutually exclusive possible outcomes, define a <strong>Book</strong> on that event as a finite set of mapping rules <span class="math inline">\(\Omega\)</span>, where:</p>
+<ul>
+<li>For each of <span class="math inline">\(N\)</span> mutually exclusive event’s outcomes <span class="math inline">\(R_i\)</span> with <span class="math inline">\(i = \{1, 2, \dots, N\}\)</span> there is a payout coefficient <span class="math inline">\(O_i\)</span> we refer to as <strong>Odds</strong>.</li>
+<li>The odds for an outcome <span class="math inline">\(i\)</span> represent the amount of units the bookmaker will return for each unit wagered on that outcome if it actually happens.</li>
+</ul>
+<p>In defining <span class="math inline">\(\Omega\)</span>, the bookmaker must respect the following constraint over the decimal odds he sets over <span class="math inline">\(N\)</span> mutually exclusive outcomes:</p>
+<p><span class="math display">\[O_i &gt; 1 \quad \forall i \in \{1, \dots, N\} \tag{1}\]</span></p>
+<p>Condition (1) implies that a payout is inevitable for the bookmaker on at least one outcome. Take as an example a football match where the bookmaker offers odds greater than 1 for both Team A and Team B. In order not to incur a loss, the bookmaker must be sure that what he pays to winning bets is less than what he cashes in from losing bets.</p>
+</section>
+</section>
+<section id="the-overround" class="level2">
+<h2 class="anchored" data-anchor-id="the-overround">The Overround</h2>
+<p>By denoting the outcome probability with <span class="math inline">\(P_i\)</span>, and the amount of units wagered on the outcome with <span class="math inline">\(W_i\)</span>, the bookmaker’s profit if outcome <span class="math inline">\(i\)</span> occurs is:</p>
+<p><span class="math display">\[\text{Profit}_i = W_{\text{total}} - O_i W_i \tag{2}\]</span></p>
+<p>Which conveniently simplifies to the total <strong>Expected Profit</strong> for the entire book <span class="math inline">\(\Omega\)</span>:</p>
+<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N P_i (W_{\text{total}} - O_i W_i) \tag{3}\]</span></p>
+<p>In the context of a fair game, the payout coefficient expressed as decimal odds for any outcome is the inverse of the outcome’s underlying probability:</p>
+<p><span class="math display">\[O_i^{\text{fair}} = \frac{1}{P_i} \tag{4}\]</span></p>
+<p>So, the inverse of the decimal odds in <span class="math inline">\(\Omega\)</span> for outcome <span class="math inline">\(i\)</span> gives us the bookmaker’s <strong>Implied Probability</strong> for that outcome:</p>
+<p><span class="math display">\[\hat{P}_i = \frac{1}{O_i} \tag{5}\]</span></p>
+<p>By using (5), the bookmaker’s expected profit in equation (3) can be rewritten as:</p>
+<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N W_i \left( 1 - \frac{P_i}{\hat{P}_i} \right) \tag{6}\]</span></p>
+<p>By examining equation (6), it is clear that for the expected profit to be positive, <span class="math inline">\(\Omega\)</span> must be structured so that the implied probabilities are bigger than the outcomes’ probabilities:</p>
+<p><span class="math display">\[\hat{P}_i &gt; P_i \tag{7}\]</span></p>
+<p>As long as the condition from (7) is verified, the bookmaker’s expected profit (6) is positive irrespective of the event’s outcome, and independently from the distribution of wagers. In other words, long-term profitability is ensured as long as the odds offered are always smaller than the fair odds:</p>
+<p><span class="math display">\[O_i &lt; O_i^{\text{fair}} \tag{8}\]</span></p>
+<p>Given a book <span class="math inline">\(\Omega\)</span>, the overround can be calculated from empirical data as follows:</p>
+<p><span class="math display">\[\text{Overround} = \left( \sum_{i=1}^N \frac{1}{O_i} \right) - 1 \tag{9}\]</span></p>
+</section>
+<section id="empirical-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="empirical-evidence">Empirical Evidence</h2>
+<p>The plot below shows the percentage overround for Wimbledon 2023 matches calculated using historical odds offered by Bet365. For the 127 tennis matches considered, the bookmaker’s overround ranges from 1.95% to 5.9% with the most frequent overround percentage being around 5.55%.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F097a40f6-e45f-4877-8069-83faf97a6889_595x497.png" class="img-fluid figure-img"></p>
+<figcaption>Wimbledon 2023 Overround Plot</figcaption>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-<p>Big game studios don’t just declare a winner and move on. They keep digging. Discover why optimizing a winning feature can double its impact and how small teams can do it efficiently.</p>
-</a></div>
+</section>
+<section id="simulation-study" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-study">Simulation Study</h2>
+<p>This section briefly illustrates the effectiveness of overrounding using a small simulation study.</p>
+<p><strong>Setting</strong> * A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins. * The underlying outcomes’ probabilities are set to .8 and .2 respectively. * On each event, 50 units are wagered on Team A and 50 units on Team B. * <strong>Bookmaker 1</strong> always offers odds correctly reflecting the outcomes’ probabilities (<strong>Fair Strategy</strong>). * <strong>Bookmaker 2</strong> makes mispricing mistakes offering odds 5% higher than the fair odds (<strong>Mispricing Strategy</strong>). * <strong>Bookmaker 3</strong> applies an overround of 5% (<strong>Overrounding Strategy</strong>).</p>
+<p><strong>Results</strong> The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../figs/bookies_1.png" class="img-fluid figure-img"></p>
+<figcaption>Simulation Results Plot</figcaption>
+</figure>
 </div>
-<div class="metadata">
-<a href="./SYGACT/optimize-test-winners/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TU9ERUxJTkclMkNTUEJNJTIwU0VSSUVT" data-listing-date-sort="1767222000000" data-listing-file-modified-sort="1781023964850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1073">
-<div class="thumbnail"><a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
+<p>As can be seen after 5000 events: * The bookmaker adopting the <strong>Overround Strategy</strong> is highly profitable with an average expected cumulative profit above 20,000 units. * The bookmaker offering <strong>Fair Odds</strong> has profits and losses balancing each other, ending up with no profit. * The bookmaker who is <strong>Mispricing</strong> the outcomes is losing more than -20,000 units.</p>
+</section>
+<section id="final-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
+<p>The overround is a bookmaking tactic which consists of offering odds based on inflated estimates of the outcomes’ probabilities. Under certain conditions, this tactic allows the bookmaker to be profitable in the long run thanks to the expected value of his books designed to consistently be in his favor.</p>
+<p>Overrounding however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.</p>
+<p>In a future post, I will explore the scenarios where an overround alone isn’t enough to guarantee success, and how bookmakers react to protect their bottom line.</p>
 
-<img loading="lazy" src="./figs/bookies_1.png" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes</a>
-</h3>
-<div class="listing-categories">
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('TU9ERUxJTkc='); return false;">MODELING</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U1BCTSUyMFNFUklFUw=='); return false;">SPBM SERIES</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
-<p>How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYGACT/bookmakers-pricing-tactics/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF" data-listing-date-sort="1749506400000" data-listing-file-modified-sort="1781019420311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="756">
-<div class="thumbnail"><a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-
-<img loading="lazy" src="./figs/flask.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">5 Reasons Businesses Fall Short in Leveraging A/B Testing and What to Do About Them</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UFJPRFVDVCUyMERBVEElMjBTQ0lFTkNF'); return false;">PRODUCT DATA SCIENCE</div>
-
-</div>
-<div class="delink listing-description"><a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-<p>Why do some companies fail to unlock the potential of A/B testing? I explore five overlooked conditions that hinder growth and how leadership can fix them.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./SYGACT/ab-testing-business-failures/index.html" class="no-external">
-<div class="listing-author">
-Elio Amicarelli
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

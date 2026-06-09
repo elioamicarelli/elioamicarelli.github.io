@@ -1,8 +1,10 @@
 ---
 title: "Your Model Residuals are Not Just Noise"
+date: "2026-03-10"
 author: "Elio Amicarelli"
+draft: true
 description: "Model residuals are more than just inconvenient noise. In this short analytical post, I demonstrate how they hold the key to improving model quality and performance."
-categories: [statistical modeling, regression, residuals]
+categories: [STATISTICAL MODELING]
 image: ../../figs/e.png
 ---
 

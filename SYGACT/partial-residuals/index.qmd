@@ -1,8 +1,10 @@
 ---
 title: "Partial Residuals in Multivariable Regression"
+date: "2026-04-15"
 author: "Elio Amicarelli"
+draft: true
 description: "The analysis of partial residuals can reveal non-linear relationships that overall residuals might hide. In this post I simulate some scenarios to illustrate their usefulness in model diagnostics."
-categories: [statistical modeling, regression, residuals]
+categories: [STATISTICAL MODELING]
 image: ../../figs/partial_residuals.png
 ---
 

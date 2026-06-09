@@ -1,0 +1,44 @@
+---
+title: "5 Reasons Businesses Fall Short in Leveraging A/B Testing and What to Do About Them"
+date: "2025-06-10"
+author: "Elio Amicarelli"
+description: "Why do some companies fail to unlock the potential of A/B testing? I explore five overlooked conditions that hinder growth and how leadership can fix them."
+categories: [PRODUCT DATA SCIENCE]
+image: ../../figs/flask.png
+---
+
+Why do some companies fall short in unlocking the potential of A/B testing for business growth? Over the years, I have collaborated with and advised companies at various stages of experimentation maturity. Although technical statistical aspects are vital for the daily implementation of online experiments (e.g., the assessment of statistical power), over time, I have spotted the following **five overlooked conditions that severely hinder data science teams' ability to support decision-makers** with A/B test results.
+
+## 1. Low trust in A/B testing tools
+
+Companies can build their own A/B testing tools or rely on commercial solutions. Particularly in the latter category, the adoption of a specific tool is not always accompanied by rigorous **internal validation of the tool's reliability**. I have noticed that this oversight can erode confidence in A/B test results, thus weakening the data scientists' ability to provide robust business recommendations based on these results.
+
+When supporting the company in evaluating commercial A/B testing tools, tech leads should prioritize the possibility of post-hoc replication of those processes essential for reproducing test results (e.g., users' assignment to the different test variants). On the other hand, in the case of internal tools, it is indeed of utmost importance to carefully check the correct selection and implementation of relevant statistical tests. Conducting A/A tests is also a valuable practice that can be adopted to check for the reliability of testing tools.
+
+## 2. Absence of documentation standards
+
+When I asked about the reporting practices for A/B tests, a Data Science Lead casually remarked, "We don't have a strong opinion about that." Systematic A/B testing is not just about running a specific test; it's also about **building a reliable body of evidence based on causal knowledge**. This will reduce redundant testing and foster the discovery of larger patterns on what works and what does not work for the business. The goal is to get better at designing A/B tests and increase the proportion of tests with a positive impact.
+
+Effective experimentation groups adopt systematic practices in documenting and storing both the A/B test specifications and the final analysis report for every experiment.
+
+## 3. Overlooking best practices
+
+In large scale A/B testing, there are several **best practices that minimize risks for the business** while also increasing the chance of successfully completing the test life cycle. I'll use the case of a new feature's rollout to illustrate this point.
+
+Introductory A/B testing courses often use a 50/50 randomized assignment of the population in test and control groups for exemplification purposes. Surprisingly enough, in some companies, data scientists adopt this practice by default. The problem is that in the case of negative test performance, a straight 50% rollout can end up harming the user experience of many, as well as business Key Performance Indicators (KPIs). To mitigate this risk, it's wiser to start rolling out the test variant to a small proportion of users and expand incrementally as the evidence suggests that everything is running smoothly.
+
+## 4. Not aiming for scale
+
+A/B testing is a numbers game. Even in companies with top-level experimentation groups, **the number of highly impactful A/B tests is a small proportion** compared to the hundreds or thousands of A/B tests launched each year. Conducting A/B testing sporadically just to settle managers' disputes does not benefit the business. In this game, the probability of finding the golden ticket is also a function of how many attempts you make at it.
+
+Indeed, the alignment of key business stakeholders, as well as the inclusion of experimentation initiatives in the company's data strategy, is a necessary condition for the execution of scaling plans.
+
+## 5. Difficulty in accepting results not aligned with existing beliefs
+
+A/B testing requires humbleness. Sometimes, great ideas and business assumptions turn out to be not that great in light of A/B test results. This can be very good, as the **removal of false beliefs may allow the business to operate more efficiently**. However, creating a business environment able to profitably deal with dissonance between opinions and A/B test results requires specific actions and leadership.
+
+Data evangelism about the role of experiments as the gold standard in assessing the determinants of business performance, alignment of key stakeholders, and some quick wins represent a good recipe to increase the impact of A/B test results on business decisions.
+
+## Summing up
+
+In this post, I have highlighted five factors weakening businesses’ ability to systematically adopt online experimentation as a driver for growth. I advocate for businesses that want to unleash the potential of large-scale A/B testing to pay particular attention to laying solid foundations around A/B testing tools and best practices, reporting processes, integration with the company’s data strategy, and company culture.
