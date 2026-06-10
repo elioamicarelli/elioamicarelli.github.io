@@ -17,9 +17,11 @@ Based on my direct experience, optimizing a winning feature can easily increase 
 
 ## Caveats and risks
 
-There are indeed some caveats and pragmatic reasons explaining why less resourceful teams tend to skip optimization and run with the loot. Time constraints and the risk of haphazard tweaks are definitely two important factors. In a mobile game, even a simple feature can be tweaked in many ways, but only a small subset of these changes will actually result in a performance improvement.
+There are indeed some caveats and pragmatic reasons explaining why less resourceful teams tend to skip optimization and run with the loot. Time constraints and the risk of haphazard tweaks are definitely two important factors. 
 
-Moreover, without clear test ownership, every member of the team will have a strong opinion about what could work. Instead of relying on a well-designed optimization strategy, these premises can lead to a trial-and-error discovery phase that can waste a lot of time and ultimately lead nowhere. 
+In a mobile game, even a simple feature can be tweaked in many ways, but only a small subset of these changes will actually result in a performance improvement.Moreover, without clear test ownership, every member of the team will have a strong opinion about what could work. 
+
+Instead of relying on a well-designed optimization strategy, these premises can lead to a trial-and-error discovery phase that can waste a lot of time and ultimately lead nowhere. 
 
 ## Guidelines for small teams
 
@@ -29,8 +31,12 @@ The answer is to stand on the shoulders of giants. Winning streaks, racing compe
 
 From this perspective, each feature in the playbook can be optimized tackling three different aspects:
 
-- Presentation: How the feature is introduced to players, and which visual elements underpin the correct comprehension
-- Mechanics: How the mechanisms and flow of the feature work
-- Behavior: The behavioral drivers that the features taps into and should effectively activate
+- Presentation: How the feature is introduced to players, and which visual elements underpin the correct comprehension.
+- Mechanics: How the mechanisms and flow of the feature work.
+- Incentives: The behavioral drivers that the features taps into and should effectively activate.
 
-A winner can still have weak spots across these elements, weaknesses that knowledge of the playbook can identify already in the stage of featured design stage or quickly uncover during optimization with specific, targeted data analysis.
+A winner can still have weak spots across these elements, but a detailed understanding of its core tenets can help identify them during feature design, or quickly uncover opportunities during optimization through targeted data analysis.
+
+## Summing up
+
+The value of experimentation doesn't stop at discovering what works. Usually there is still considerable value behind maximizing the potential of test winners. For resource-strapped teams, the temptation to "run with the loot" is real, but a structured optimization phase can unlock considerable value and make a feature really shine. By evaluating your successful features through the triple lens of UI, mechanics, and incentives based on industry best practices, you can systematically design better features and identify key opportunities for optimization.
