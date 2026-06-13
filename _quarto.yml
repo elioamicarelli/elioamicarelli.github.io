@@ -17,11 +17,12 @@ website:
 format:
   html:
     theme:
-      dark:
-        - styles-dark.scss
       light:
         - flatly
         - styles-light.scss
+      dark:
+        - styles-dark.scss
+    darkmode: true
     highlight-style: dracula
     css: styles.css
     toc: true

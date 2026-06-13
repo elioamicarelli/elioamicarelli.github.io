@@ -3,10 +3,13 @@ title: "SYGACT"
 subtitle: "Systems, Games, and Behavior"
 listing:
   contents: 
-    - "SYGACT/optimize-test-winners/index.qmd"
     - "SYGACT/ab-testing-business-failures/index.qmd"
+    - "SYGACT/verasight-research-summary/index.qmd"
+    - "SYGACT/llms-commercial-applications/index.qmd"
+    - "SYGACT/llms-social-simulation/index.qmd"
     - "SYGACT/bookmakers-pricing-tactics/index.qmd"
-  sort: "date desc"
+    - "SYGACT/optimize-test-winners/index.qmd"
+  sort: false
   type: default
   categories: true
   fields: [title, author, image, description, categories]

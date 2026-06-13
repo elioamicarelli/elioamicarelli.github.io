@@ -31,6 +31,13 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-size: 110% !important;
 }
 
+// blog article body font
+.blog-post .content {
+  h1, h2, h3, h4, h5, h6, p, a, li {
+    font-size: 125% !important;
+  }
+}
+
 // div font
 div {
   font-family: "Cormorant Garamond", serif;

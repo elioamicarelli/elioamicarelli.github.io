@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Elio Amicarelli">
-<meta name="dcterms.date" content="2026-01-01">
-<meta name="description" content="How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.">
+<meta name="dcterms.date" content="2026-02-15">
+<meta name="description" content="A review of Verasight’s research on ‘Silicon Sampling’ and its limitations in market and political research.">
 
-<title>Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes – Elio Amicarelli</title>
+<title>Can LLMs replace human survey respondents? – Elio Amicarelli</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -323,14 +323,40 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-bookmakers-problem" id="toc-the-bookmakers-problem" class="nav-link active" data-scroll-target="#the-bookmakers-problem">The Bookmaker’s Problem</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-methodology-in-a-nutshell-how-to-prompt-a-synthetic-human" id="toc-the-methodology-in-a-nutshell-how-to-prompt-a-synthetic-human" class="nav-link" data-scroll-target="#the-methodology-in-a-nutshell-how-to-prompt-a-synthetic-human">The Methodology in a Nutshell: How to Prompt a Synthetic Human</a></li>
+  <li><a href="#report-i-the-illusion-of-accuracy-in-politics" id="toc-report-i-the-illusion-of-accuracy-in-politics" class="nav-link" data-scroll-target="#report-i-the-illusion-of-accuracy-in-politics">Report I: The Illusion of Accuracy in Politics</a>
   <ul class="collapse">
-  <li><a href="#defining-a-book" id="toc-defining-a-book" class="nav-link" data-scroll-target="#defining-a-book">Defining a Book</a></li>
+  <li><a href="#the-questions" id="toc-the-questions" class="nav-link" data-scroll-target="#the-questions">The Questions</a></li>
+  <li><a href="#the-results" id="toc-the-results" class="nav-link" data-scroll-target="#the-results">The Results</a></li>
   </ul></li>
-  <li><a href="#the-overround" id="toc-the-overround" class="nav-link" data-scroll-target="#the-overround">The Overround</a></li>
-  <li><a href="#empirical-evidence" id="toc-empirical-evidence" class="nav-link" data-scroll-target="#empirical-evidence">Empirical Evidence</a></li>
-  <li><a href="#simulation-study" id="toc-simulation-study" class="nav-link" data-scroll-target="#simulation-study">Simulation Study</a></li>
-  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final Remarks</a></li>
+  <li><a href="#report-ii-can-more-data-fix-the-problem" id="toc-report-ii-can-more-data-fix-the-problem" class="nav-link" data-scroll-target="#report-ii-can-more-data-fix-the-problem">Report II: Can More Data Fix the Problem?</a>
+  <ul class="collapse">
+  <li><a href="#the-enhancements" id="toc-the-enhancements" class="nav-link" data-scroll-target="#the-enhancements">The Enhancements</a></li>
+  <li><a href="#the-results-the-garden-of-forking-paths" id="toc-the-results-the-garden-of-forking-paths" class="nav-link" data-scroll-target="#the-results-the-garden-of-forking-paths">The Results: The “Garden of Forking Paths”</a></li>
+  </ul></li>
+  <li><a href="#report-iii-consumer-behavior-and-the-coffee-test" id="toc-report-iii-consumer-behavior-and-the-coffee-test" class="nav-link" data-scroll-target="#report-iii-consumer-behavior-and-the-coffee-test">Report III: Consumer Behavior and the “Coffee Test”</a>
+  <ul class="collapse">
+  <li><a href="#the-study" id="toc-the-study" class="nav-link" data-scroll-target="#the-study">The Study</a></li>
+  <li><a href="#the-results-a-bitter-brew" id="toc-the-results-a-bitter-brew" class="nav-link" data-scroll-target="#the-results-a-bitter-brew">The Results: A Bitter Brew</a></li>
+  <li><a href="#key-insight-culture-vs.-nuance" id="toc-key-insight-culture-vs.-nuance" class="nav-link" data-scroll-target="#key-insight-culture-vs.-nuance">Key Insight: Culture vs.&nbsp;Nuance</a></li>
+  </ul></li>
+  <li><a href="#report-iv-beyond-politics-and-the-velociraptor-test" id="toc-report-iv-beyond-politics-and-the-velociraptor-test" class="nav-link" data-scroll-target="#report-iv-beyond-politics-and-the-velociraptor-test">Report IV: Beyond Politics and the Velociraptor Test</a>
+  <ul class="collapse">
+  <li><a href="#the-questions-1" id="toc-the-questions-1" class="nav-link" data-scroll-target="#the-questions-1">The Questions</a></li>
+  <li><a href="#the-results-the-graying-out-of-human-opinion" id="toc-the-results-the-graying-out-of-human-opinion" class="nav-link" data-scroll-target="#the-results-the-graying-out-of-human-opinion">The Results: The “Graying Out” of Human Opinion</a></li>
+  </ul></li>
+  <li><a href="#report-v-the-theseus-project-and-the-limits-of-scaling" id="toc-report-v-the-theseus-project-and-the-limits-of-scaling" class="nav-link" data-scroll-target="#report-v-the-theseus-project-and-the-limits-of-scaling">Report V: The THESEUS Project and the Limits of Scaling</a>
+  <ul class="collapse">
+  <li><a href="#the-methodology-a-bottom-up-approach" id="toc-the-methodology-a-bottom-up-approach" class="nav-link" data-scroll-target="#the-methodology-a-bottom-up-approach">The Methodology: A Bottom-Up Approach</a></li>
+  <li><a href="#the-results-the-success-of-polarization-the-failure-of-salience" id="toc-the-results-the-success-of-polarization-the-failure-of-salience" class="nav-link" data-scroll-target="#the-results-the-success-of-polarization-the-failure-of-salience">The Results: The Success of Polarization, the Failure of Salience</a></li>
+  <li><a href="#key-insight-the-scaling-myth" id="toc-key-insight-the-scaling-myth" class="nav-link" data-scroll-target="#key-insight-the-scaling-myth">Key Insight: The Scaling Myth</a></li>
+  </ul></li>
+  <li><a href="#the-verdict-why-llms-arent-ready-for-market-research" id="toc-the-verdict-why-llms-arent-ready-for-market-research" class="nav-link" data-scroll-target="#the-verdict-why-llms-arent-ready-for-market-research">The Verdict: Why LLMs Aren’t Ready for Market Research</a>
+  <ul class="collapse">
+  <li><a href="#key-takeaways-for-researchers" id="toc-key-takeaways-for-researchers" class="nav-link" data-scroll-target="#key-takeaways-for-researchers">Key Takeaways for Researchers:</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -340,16 +366,15 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes</h1>
+<h1 class="title">Can LLMs replace human survey respondents?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">MODELING</div>
-    <div class="quarto-category">SPBM SERIES</div>
+    <div class="quarto-category">AI research</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.
+    A review of Verasight’s research on ‘Silicon Sampling’ and its limitations in market and political research.
   </div>
 </div>
 
@@ -366,7 +391,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2026</p>
+      <p class="date">February 15, 2026</p>
     </div>
   </div>
   
@@ -378,75 +403,130 @@ window.Quarto = {
 </header>
 
 
-<p>This is the first in a series of posts on modeling fixed-odds betting markets. To understand how these markets function, we must first look at the ‘supply’ side, the bookmaker, and one fundamental mechanism they use to survive: <strong>the Overround</strong>.</p>
-<p>In fixed-odds betting markets, bookmakers offer positive payouts for mutually exclusive outcomes of a sporting event. This means they are guaranteed to pay out to some bettors based on the outcome that occurs.</p>
-<p>So, how do bookmakers ensure that these guaranteed payouts don’t lead to losses that could put them out of business, and instead, remain profitable?</p>
-<section id="the-bookmakers-problem" class="level2">
-<h2 class="anchored" data-anchor-id="the-bookmakers-problem">The Bookmaker’s Problem</h2>
-<p>I stick with the decimal representation of odds so that <span class="math inline">\(O_i = 1.5\)</span> means that each unit wagered on the outcome <span class="math inline">\(R_i\)</span> will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.</p>
-<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
-<p>A bookmaker, however, might offer odds of 1.90 for both. Now, they still cash in <span class="math inline">\(\$200\)</span>, but only pay out <span class="math inline">\(\$190\)</span> to the winner. That <span class="math inline">\(\$10\)</span> difference is the <strong>Overround</strong> in action. It ensures, under certain conditions, that regardless of how the coin lands, the bookmaker retains a portion of the total wagers.</p>
-<p>The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!</p>
-<p>What follow in an analytical and empirical analysis of the overround.</p>
-<section id="defining-a-book" class="level3">
-<h3 class="anchored" data-anchor-id="defining-a-book">Defining a Book</h3>
-<p>For a future event with a number of <span class="math inline">\(N\)</span> mutually exclusive possible outcomes, define a <strong>Book</strong> on that event as a finite set of mapping rules <span class="math inline">\(\Omega\)</span>, where:</p>
+<p>Can LLMs replace human survey respondents? Over the past year, the survey research company Verasight published five empirical studies tackling this question from different angles. Part three of my LLMs for Social Simulation series reviews their research to investigate whether Silicon Sampling can be reliably used for surveys and market research.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In the world of market research and political polling, <strong>Silicon Sampling</strong> holds the promise of delivering fast, cheap, and accurate data: instead of spending weeks and thousands of dollars calling human beings, researchers can prompt a Large Language Model (LLM) with a “persona” and get an instant, human-like response.</p>
+<p>But how accurate and reliable are, to date, the results we can expect to obtain from commercial LLMs on these tasks? To answer this question, this post summarizes the findings of a suite of applied research published by Verasight between August 2025 and January 2026.</p>
+</section>
+<section id="the-methodology-in-a-nutshell-how-to-prompt-a-synthetic-human" class="level2">
+<h2 class="anchored" data-anchor-id="the-methodology-in-a-nutshell-how-to-prompt-a-synthetic-human">The Methodology in a Nutshell: How to Prompt a Synthetic Human</h2>
+<p>The core technique used across most Verasight studies is <strong>Persona-Based Prompting</strong>.</p>
+<ol type="1">
+<li><strong>The Human Baseline:</strong> Verasight started with real survey data from their online panel (ranging from 1,500 to 15,000 real U.S. adults).</li>
+<li><strong>The Digital Twin:</strong> For every real human in the sample, they created a text-based persona. This included age, gender, race, education, income, state of residence, political ideology, and party affiliation.</li>
+<li><strong>The Prompt:</strong> The LLM (ranging from GPT-4o to GPT-5.4) was instructed: <em>“Your job is now to act as a substitute for a human respondent… You must answer the question in the way you think the given persona would answer.”</em></li>
+<li><strong>The Comparison:</strong> Researchers then compared the results of the “Silicon Sample” to the “Human Sample” to see how closely they matched.</li>
+</ol>
+</section>
+<section id="report-i-the-illusion-of-accuracy-in-politics" class="level2">
+<h2 class="anchored" data-anchor-id="report-i-the-illusion-of-accuracy-in-politics">Report I: The Illusion of Accuracy in Politics</h2>
+<p>The first investigation [1] focused on the heavy hitters of polling: <strong>Trump Approval</strong> and the <strong>2026 Generic Congressional Ballot</strong>.</p>
+<section id="the-questions" class="level3">
+<h3 class="anchored" data-anchor-id="the-questions">The Questions</h3>
 <ul>
-<li>For each of <span class="math inline">\(N\)</span> mutually exclusive event’s outcomes <span class="math inline">\(R_i\)</span> with <span class="math inline">\(i = \{1, 2, \dots, N\}\)</span> there is a payout coefficient <span class="math inline">\(O_i\)</span> we refer to as <strong>Odds</strong>.</li>
-<li>The odds for an outcome <span class="math inline">\(i\)</span> represent the amount of units the bookmaker will return for each unit wagered on that outcome if it actually happens.</li>
+<li>“Do you approve or disapprove of the way Donald Trump is handling his job as president?”</li>
+<li>“Which party’s candidate would you vote for in your local congressional district?”</li>
+<li><strong>The Out-of-Sample Test:</strong> A question about the “Abundance Agenda” (zoning laws) to see how the model handled a topic not yet in its training data.</li>
 </ul>
-<p>In defining <span class="math inline">\(\Omega\)</span>, the bookmaker must respect the following constraint over the decimal odds he sets over <span class="math inline">\(N\)</span> mutually exclusive outcomes:</p>
-<p><span class="math display">\[O_i &gt; 1 \quad \forall i \in \{1, \dots, N\} \tag{1}\]</span></p>
-<p>Condition (1) implies that a payout is inevitable for the bookmaker on at least one outcome. Take as an example a football match where the bookmaker offers odds greater than 1 for both Team A and Team B. In order not to incur a loss, the bookmaker must be sure that what he pays to winning bets is less than what he cashes in from losing bets.</p>
+</section>
+<section id="the-results" class="level3">
+<h3 class="anchored" data-anchor-id="the-results">The Results</h3>
+<p>On the surface, the results looked promising. For Trump’s approval, the best-performing model (GPT-4o-mini) was only <strong>4 percentage points</strong> off from the human topline.</p>
+<p>However, a detailed analysis revealed significant cracks: * <strong>Subgroup Erasure:</strong> The model was disastrous at predicting minority opinions. For Black respondents, the error on Trump disapproval ballooned to <strong>15-20 points</strong>. * <strong>The Uncertainty Gap:</strong> Humans are often undecided. In the real poll, 3% of people chose “Don’t Know” for Trump approval. The LLM? <strong>0%</strong>. * <strong>The Zoning Failure:</strong> On the “Abundance Agenda” (a non-partisan, novel topic), the LLM was completely lost. It flipped the leading position, turning a 15-point human preference for keeping zoning laws into an 18-point AI preference for changing them.</p>
 </section>
 </section>
-<section id="the-overround" class="level2">
-<h2 class="anchored" data-anchor-id="the-overround">The Overround</h2>
-<p>By denoting the outcome probability with <span class="math inline">\(P_i\)</span>, and the amount of units wagered on the outcome with <span class="math inline">\(W_i\)</span>, the bookmaker’s profit if outcome <span class="math inline">\(i\)</span> occurs is:</p>
-<p><span class="math display">\[\text{Profit}_i = W_{\text{total}} - O_i W_i \tag{2}\]</span></p>
-<p>Which conveniently simplifies to the total <strong>Expected Profit</strong> for the entire book <span class="math inline">\(\Omega\)</span>:</p>
-<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N P_i (W_{\text{total}} - O_i W_i) \tag{3}\]</span></p>
-<p>In the context of a fair game, the payout coefficient expressed as decimal odds for any outcome is the inverse of the outcome’s underlying probability:</p>
-<p><span class="math display">\[O_i^{\text{fair}} = \frac{1}{P_i} \tag{4}\]</span></p>
-<p>So, the inverse of the decimal odds in <span class="math inline">\(\Omega\)</span> for outcome <span class="math inline">\(i\)</span> gives us the bookmaker’s <strong>Implied Probability</strong> for that outcome:</p>
-<p><span class="math display">\[\hat{P}_i = \frac{1}{O_i} \tag{5}\]</span></p>
-<p>By using (5), the bookmaker’s expected profit in equation (3) can be rewritten as:</p>
-<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N W_i \left( 1 - \frac{P_i}{\hat{P}_i} \right) \tag{6}\]</span></p>
-<p>By examining equation (6), it is clear that for the expected profit to be positive, <span class="math inline">\(\Omega\)</span> must be structured so that the implied probabilities are bigger than the outcomes’ probabilities:</p>
-<p><span class="math display">\[\hat{P}_i &gt; P_i \tag{7}\]</span></p>
-<p>As long as the condition from (7) is verified, the bookmaker’s expected profit (6) is positive irrespective of the event’s outcome, and independently from the distribution of wagers. In other words, long-term profitability is ensured as long as the odds offered are always smaller than the fair odds:</p>
-<p><span class="math display">\[O_i &lt; O_i^{\text{fair}} \tag{8}\]</span></p>
-<p>Given a book <span class="math inline">\(\Omega\)</span>, the overround can be calculated from empirical data as follows:</p>
-<p><span class="math display">\[\text{Overround} = \left( \sum_{i=1}^N \frac{1}{O_i} \right) - 1 \tag{9}\]</span></p>
+<section id="report-ii-can-more-data-fix-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="report-ii-can-more-data-fix-the-problem">Report II: Can More Data Fix the Problem?</h2>
+<p>If a basic persona isn’t enough, what if we give the AI more “context”? Report II [2] tested several “best-case-scenario” enhancements using <strong>GPT-5</strong>.</p>
+<section id="the-enhancements" class="level3">
+<h3 class="anchored" data-anchor-id="the-enhancements">The Enhancements</h3>
+<ul>
+<li><strong>Chain-of-Thought (CoT):</strong> Asking the model to “think step-by-step” before answering.</li>
+<li><strong>Administrative Data:</strong> Adding the respondent’s actual <strong>2024 voter turnout history</strong> to the persona.</li>
+<li><strong>Attitudinal Anchors:</strong> Telling the LLM how the respondent felt about a related topic (e.g., Trump’s tariff policy) before asking for their approval rating.</li>
+</ul>
 </section>
-<section id="empirical-evidence" class="level2">
-<h2 class="anchored" data-anchor-id="empirical-evidence">Empirical Evidence</h2>
-<p>The plot below shows the percentage overround for Wimbledon 2023 matches calculated using historical odds offered by Bet365. For the 127 tennis matches considered, the bookmaker’s overround ranges from 1.95% to 5.9% with the most frequent overround percentage being around 5.55%.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F097a40f6-e45f-4877-8069-83faf97a6889_595x497.png" class="img-fluid figure-img"></p>
-<figcaption>Wimbledon 2023 Overround Plot</figcaption>
-</figure>
-</div>
+<section id="the-results-the-garden-of-forking-paths" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-the-garden-of-forking-paths">The Results: The “Garden of Forking Paths”</h3>
+<p>To the researchers’ surprise, <strong>more data did not mean better accuracy.</strong> * For Trump approval, the models with <em>more</em> information actually performed <strong>worse</strong> than the simpler models from the first report. * While the model hit a “bullseye” on the Generic Ballot (within 1 point), it was likely “cheating”—simply echoing the partisanship and voting history already present in the prompt. * On immigration policy, even with all the extra data, the error remained at a massive <strong>11.3 percentage points</strong>.</p>
+<p>The conclusion was clear: LLM results are highly sensitive to how the prompt is written (the “forking paths”), and there is no way for a researcher to know if adding more data is helping or hurting without already knowing the “true” human answer.</p>
 </section>
-<section id="simulation-study" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-study">Simulation Study</h2>
-<p>This section briefly illustrates the effectiveness of overrounding using a small simulation study.</p>
-<p><strong>Setting</strong> * A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins. * The underlying outcomes’ probabilities are set to .8 and .2 respectively. * On each event, 50 units are wagered on Team A and 50 units on Team B. * <strong>Bookmaker 1</strong> always offers odds correctly reflecting the outcomes’ probabilities (<strong>Fair Strategy</strong>). * <strong>Bookmaker 2</strong> makes mispricing mistakes offering odds 5% higher than the fair odds (<strong>Mispricing Strategy</strong>). * <strong>Bookmaker 3</strong> applies an overround of 5% (<strong>Overrounding Strategy</strong>).</p>
-<p><strong>Results</strong> The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../figs/bookies_1.png" class="img-fluid figure-img"></p>
-<figcaption>Simulation Results Plot</figcaption>
-</figure>
-</div>
-<p>As can be seen after 5000 events: * The bookmaker adopting the <strong>Overround Strategy</strong> is highly profitable with an average expected cumulative profit above 20,000 units. * The bookmaker offering <strong>Fair Odds</strong> has profits and losses balancing each other, ending up with no profit. * The bookmaker who is <strong>Mispricing</strong> the outcomes is losing more than -20,000 units.</p>
 </section>
-<section id="final-remarks" class="level2">
-<h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
-<p>The overround is a bookmaking tactic which consists of offering odds based on inflated estimates of the outcomes’ probabilities. Under certain conditions, this tactic allows the bookmaker to be profitable in the long run thanks to the expected value of his books designed to consistently be in his favor.</p>
-<p>Overrounding however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.</p>
-<p>In a future post, I will explore the scenarios where an overround alone isn’t enough to guarantee success, and how bookmakers react to protect their bottom line.</p>
+<section id="report-iii-consumer-behavior-and-the-coffee-test" class="level2">
+<h2 class="anchored" data-anchor-id="report-iii-consumer-behavior-and-the-coffee-test">Report III: Consumer Behavior and the “Coffee Test”</h2>
+<p>The third report [3] shifted from politics to <strong>Market Research</strong>, specifically focusing on coffee consumption, brand awareness, and interest in hypothetical new products.</p>
+<section id="the-study" class="level3">
+<h3 class="anchored" data-anchor-id="the-study">The Study</h3>
+<p>Researchers compared human responses to LLM (GPT-5) simulations across two studies: 1. <strong>Raw Replication:</strong> Simple persona-based prompting. 2. <strong>The “Digital Twin” Approach:</strong> Giving the LLM additional context about a persona’s existing coffee habits (e.g., frequency, budget, favorite brands) to see if it could “impute” other related behaviors.</p>
+</section>
+<section id="the-results-a-bitter-brew" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-a-bitter-brew">The Results: A Bitter Brew</h3>
+<p>The relative accuracy found in political polling vanished when applied to consumer behavior. * <strong>The Error Explosion:</strong> While politics saw errors around 3-4 points in some cases, the coffee study had a <strong>mean absolute error of 19.8 points</strong>. * <strong>Stereotyping “Heavy” Users:</strong> The LLM consistently overestimated consumption. It predicted 91% of adults drink coffee daily (actual: 56%) and failed to predict <em>any</em> non-drinkers (actual: 17%). * <strong>The Failure of Novelty:</strong> When asked to rank six hypothetical Starbucks drinks, the LLM overwhelmingly flocked to “Autumn Ember” (66%), while human preferences were nearly evenly split (18-21%) across multiple options. The model’s inability to simulate taste preferences represents a fundamental limitation for product development. * <strong>The “Digital Twin” Limit:</strong> Adding domain-specific data (like existing coffee habits) reduced error by about 50% (from 20 points down to 9), but the models still missed the “wide distribution” of real human attitudes. For example, the LLM placed zero consumers in the “About the same” price category for Starbucks, whereas 16% of humans chose it.</p>
+</section>
+<section id="key-insight-culture-vs.-nuance" class="level3">
+<h3 class="anchored" data-anchor-id="key-insight-culture-vs.-nuance">Key Insight: Culture vs.&nbsp;Nuance</h3>
+<p>The LLM relies on <strong>broad cultural knowledge</strong> (e.g., “Starbucks is popular and expensive”) rather than the nuanced geographic and demographic patterns that drive real market behavior. It fails to capture the “messiness” of human taste and the reality of regional brand preferences (completely missing the mark on brands like Peet’s Coffee).</p>
+</section>
+</section>
+<section id="report-iv-beyond-politics-and-the-velociraptor-test" class="level2">
+<h2 class="anchored" data-anchor-id="report-iv-beyond-politics-and-the-velociraptor-test">Report IV: Beyond Politics and the Velociraptor Test</h2>
+<p>The fourth report [4] expanded the domain to 52 different questions across <strong>Health Care, Tech, Society, and Life</strong>. It also introduced the most amusing—but telling—test of the series: <strong>“Which animals could you defeat in a fight?”</strong></p>
+<section id="the-questions-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-questions-1">The Questions</h3>
+<ul>
+<li>Personal preferences: “Do you prefer a pumpkin spice latte or a regular coffee?”</li>
+<li>Market research: Consumer habits for meal-delivery apps and brand awareness.</li>
+<li>The “Velociraptor Test”: A multi-response question asking respondents to select all animals they could defeat unarmed (from a rat to a gorilla).</li>
+</ul>
+</section>
+<section id="the-results-the-graying-out-of-human-opinion" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-the-graying-out-of-human-opinion">The Results: The “Graying Out” of Human Opinion</h3>
+<ul>
+<li><strong>Topic Failure:</strong> While politics had an error of 12.1 points, <strong>Health Care questions had a staggering 23.4 point error</strong>.</li>
+<li><strong>Regression to the Mean:</strong> LLMs have a “systematic tendency” to predict the average. They over-predict rare opinions and under-predict common ones. They fail to capture the “extreme” or polarized responses that humans actually give.</li>
+<li><strong>The Multi-Response Mess:</strong> LLMs are incapable of handling “Select all that apply” questions. In the animal fight test, the LLM ignored <strong>35% of the options</strong> that humans frequently picked. If 40% of humans said they could beat a certain animal, the LLM sometimes chose that option <strong>zero times</strong> across 1,000 trials.</li>
+</ul>
+</section>
+</section>
+<section id="report-v-the-theseus-project-and-the-limits-of-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="report-v-the-theseus-project-and-the-limits-of-scaling">Report V: The THESEUS Project and the Limits of Scaling</h2>
+<p>The fifth and final report [5] in the series attempted to <strong>“steelman”</strong> the entire synthetic polling approach by building the most sophisticated pipeline possible, codenamed <strong>THESEUS</strong>.</p>
+<section id="the-methodology-a-bottom-up-approach" class="level3">
+<h3 class="anchored" data-anchor-id="the-methodology-a-bottom-up-approach">The Methodology: A Bottom-Up Approach</h3>
+<p>Instead of simple persona prompts, THESEUS used a multi-stage process: 1. <strong>Census Microdata:</strong> Sampling 1,000 “agents” from the 2023 American Community Survey (ACS) to ensure a representative demographic and geographic frame. 2. <strong>Attitudinal Imputation:</strong> Using a pool of 15,000 real “donor” respondents to impute political attitudes (Party ID, ideology, 2024 vote) onto the Census-based agents. 3. <strong>Verbalized Sampling:</strong> Asking GPT-5.4 for a <strong>probability distribution</strong> across response options rather than a single choice, allowing for more nuanced aggregate estimates.</p>
+</section>
+<section id="the-results-the-success-of-polarization-the-failure-of-salience" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-the-success-of-polarization-the-failure-of-salience">The Results: The Success of Polarization, the Failure of Salience</h3>
+<p>The THESEUS pipeline achieved the highest accuracy yet for high-profile political items, but failed elsewhere: * <strong>Topline Success:</strong> Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) fell within the range of normal sampling noise for a human poll. * <strong>Low-Salience Failure:</strong> For “out-of-sample” or low-salience topics, the model missed badly. Awareness of recent events in Venezuela was off by <strong>12.8 points</strong>, and federal budget tradeoffs were off by <strong>11 points</strong>. * <strong>The Subgroup Gap:</strong> Even when toplines were accurate, subgroup errors (e.g., by Party ID) remained high, often exceeding <strong>10-13 points</strong>. The LLM systematically biased partisan groups toward the center (50/50).</p>
+</section>
+<section id="key-insight-the-scaling-myth" class="level3">
+<h3 class="anchored" data-anchor-id="key-insight-the-scaling-myth">Key Insight: The Scaling Myth</h3>
+<p>Perhaps the most significant finding was that <strong>increasing the sample size did not help.</strong> Increasing the agent pool from 500 to 5,000 had almost no impact on accuracy. This proves that the errors in synthetic polling are <strong>systematic and structural (model bias)</strong>, not statistical noise. You cannot “spend” your way to accuracy by running more agents.</p>
+</section>
+</section>
+<section id="the-verdict-why-llms-arent-ready-for-market-research" class="level2">
+<h2 class="anchored" data-anchor-id="the-verdict-why-llms-arent-ready-for-market-research">The Verdict: Why LLMs Aren’t Ready for Market Research</h2>
+<p>The Verasight research identifies two conditions necessary for “Silicon Sampling” to even stand a chance: 1. <strong>Training Data Density:</strong> The LLM must have been trained on vast amounts of data regarding the specific topic. 2. <strong>Demographic Predictability:</strong> The attitude must be predictably linked to demographics (like partisanship).</p>
+<p>When these conditions aren’t met—which is the case for most market research, product testing, and novel policy questions, LLMs fail.</p>
+<section id="key-takeaways-for-researchers" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaways-for-researchers">Key Takeaways for Researchers:</h3>
+<ul>
+<li><strong>Don’t Trust Subgroups:</strong> If you need to know what young people or minority groups think, you must ask them directly. AI will give you a “stereotypical average” that erases their unique perspectives.</li>
+<li><strong>The Polarization Bias:</strong> LLMs tend to “gray out” the world, making human opinion look more uniform and less certain than it actually is.</li>
+<li><strong>Scaling is a Dead End:</strong> More “fake” respondents will not fix a biased model. Accuracy must come from better attitude imputation and world-modeling, not higher <span class="math inline">\(N\)</span>.</li>
+<li><strong>The Cost of “Fake” Data:</strong> The money saved on synthetic sampling is lost in the cost of wrong decisions. A 10-point error in a political race is the difference between a landslide victory and a crushing defeat; a 23-point error in health care is a categorical failure.</li>
+</ul>
+<p>Synthetic data may have a place in testing software bugs or generating “dummy” data for pipelines, but as a window into the human preferences, it is still a distorted mirror.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>[1] Morris, Elliott G. 2025. “Your Polls on ChatGPT.” Verasight White Paper Series. https://www.verasight.io/reports/synthetic-sampling</p>
+<p>[2] Morris, G. Elliott, Benjamin Leff, and Peter K. Enns. 2025. “The Limits of Synthetic Samples in Survey Research” Verasight White Paper Series https://www.verasight.io/reports/synthetic-sampling-2</p>
+<p>[3] Morris, G. Elliott, Benjamin Leff. 2025. “LLMs Misread Real Consumer Behavior” Verasight White Paper Series https://www.verasight.io/reports/coffee-llm</p>
+<p>[4] Morris, G. Elliott, Benjamin Leff. 2026. “Can Large Language Models Replicate Survey Data Across Topics?” Verasight White Paper Series https://www.verasight.io/reports/synthetic-omnibus-survey</p>
+<p>[5] Morris, G. Elliott, Benjamin Leff, and Peter K. Enns. 2026. “Can AI ‘digital twins’ replace human respondents?” Verasight White Paper Series https://www.verasight.io/reports/can-ai-digital-twins-replace-human-respondents</p>
 
 
 </section>

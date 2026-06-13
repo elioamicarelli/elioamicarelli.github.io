@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Elio Amicarelli">
-<meta name="dcterms.date" content="2026-01-01">
-<meta name="description" content="How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.">
+<meta name="dcterms.date" content="2026-01-16">
+<meta name="description" content="A brief summary of the key findings from both sides of the debate on Large Language Model (LLM) social simulation: advancements in ‘silicon sampling’ and the boundaries of emulation.">
 
-<title>Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes – Elio Amicarelli</title>
+<title>LLMs for Social Simulation: Advancements and Challenges – Elio Amicarelli</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,35 +86,6 @@ gtag('js', new Date());
 gtag('config', 'G-VLRS3DJ725', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -323,14 +294,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-bookmakers-problem" id="toc-the-bookmakers-problem" class="nav-link active" data-scroll-target="#the-bookmakers-problem">The Bookmaker’s Problem</a>
-  <ul class="collapse">
-  <li><a href="#defining-a-book" id="toc-defining-a-book" class="nav-link" data-scroll-target="#defining-a-book">Defining a Book</a></li>
-  </ul></li>
-  <li><a href="#the-overround" id="toc-the-overround" class="nav-link" data-scroll-target="#the-overround">The Overround</a></li>
-  <li><a href="#empirical-evidence" id="toc-empirical-evidence" class="nav-link" data-scroll-target="#empirical-evidence">Empirical Evidence</a></li>
-  <li><a href="#simulation-study" id="toc-simulation-study" class="nav-link" data-scroll-target="#simulation-study">Simulation Study</a></li>
-  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final Remarks</a></li>
+  <li><a href="#advancements-the-case-for-silicon-sampling" id="toc-advancements-the-case-for-silicon-sampling" class="nav-link active" data-scroll-target="#advancements-the-case-for-silicon-sampling">[+] Advancements: The Case for “Silicon Sampling”</a></li>
+  <li><a href="#challenges-the-boundaries-of-emulation" id="toc-challenges-the-boundaries-of-emulation" class="nav-link" data-scroll-target="#challenges-the-boundaries-of-emulation">[-] Challenges: The Boundaries of Emulation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -340,16 +307,15 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Book Overround: The Pricing Tactic to Profit Regardless of Sporting Outcomes</h1>
+<h1 class="title">LLMs for Social Simulation: Advancements and Challenges</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">MODELING</div>
-    <div class="quarto-category">SPBM SERIES</div>
+    <div class="quarto-category">AI research</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    How do bookmakers ensure they remain profitable regardless of sporting outcome? Discover the overround, the price-setting tactic that builds a house advantage directly into the odds.
+    A brief summary of the key findings from both sides of the debate on Large Language Model (LLM) social simulation: advancements in ‘silicon sampling’ and the boundaries of emulation.
   </div>
 </div>
 
@@ -366,7 +332,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2026</p>
+      <p class="date">January 16, 2026</p>
     </div>
   </div>
   
@@ -378,75 +344,45 @@ window.Quarto = {
 </header>
 
 
-<p>This is the first in a series of posts on modeling fixed-odds betting markets. To understand how these markets function, we must first look at the ‘supply’ side, the bookmaker, and one fundamental mechanism they use to survive: <strong>the Overround</strong>.</p>
-<p>In fixed-odds betting markets, bookmakers offer positive payouts for mutually exclusive outcomes of a sporting event. This means they are guaranteed to pay out to some bettors based on the outcome that occurs.</p>
-<p>So, how do bookmakers ensure that these guaranteed payouts don’t lead to losses that could put them out of business, and instead, remain profitable?</p>
-<section id="the-bookmakers-problem" class="level2">
-<h2 class="anchored" data-anchor-id="the-bookmakers-problem">The Bookmaker’s Problem</h2>
-<p>I stick with the decimal representation of odds so that <span class="math inline">\(O_i = 1.5\)</span> means that each unit wagered on the outcome <span class="math inline">\(R_i\)</span> will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.</p>
-<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
-<p>A bookmaker, however, might offer odds of 1.90 for both. Now, they still cash in <span class="math inline">\(\$200\)</span>, but only pay out <span class="math inline">\(\$190\)</span> to the winner. That <span class="math inline">\(\$10\)</span> difference is the <strong>Overround</strong> in action. It ensures, under certain conditions, that regardless of how the coin lands, the bookmaker retains a portion of the total wagers.</p>
-<p>The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!</p>
-<p>What follow in an analytical and empirical analysis of the overround.</p>
-<section id="defining-a-book" class="level3">
-<h3 class="anchored" data-anchor-id="defining-a-book">Defining a Book</h3>
-<p>For a future event with a number of <span class="math inline">\(N\)</span> mutually exclusive possible outcomes, define a <strong>Book</strong> on that event as a finite set of mapping rules <span class="math inline">\(\Omega\)</span>, where:</p>
-<ul>
-<li>For each of <span class="math inline">\(N\)</span> mutually exclusive event’s outcomes <span class="math inline">\(R_i\)</span> with <span class="math inline">\(i = \{1, 2, \dots, N\}\)</span> there is a payout coefficient <span class="math inline">\(O_i\)</span> we refer to as <strong>Odds</strong>.</li>
-<li>The odds for an outcome <span class="math inline">\(i\)</span> represent the amount of units the bookmaker will return for each unit wagered on that outcome if it actually happens.</li>
-</ul>
-<p>In defining <span class="math inline">\(\Omega\)</span>, the bookmaker must respect the following constraint over the decimal odds he sets over <span class="math inline">\(N\)</span> mutually exclusive outcomes:</p>
-<p><span class="math display">\[O_i &gt; 1 \quad \forall i \in \{1, \dots, N\} \tag{1}\]</span></p>
-<p>Condition (1) implies that a payout is inevitable for the bookmaker on at least one outcome. Take as an example a football match where the bookmaker offers odds greater than 1 for both Team A and Team B. In order not to incur a loss, the bookmaker must be sure that what he pays to winning bets is less than what he cashes in from losing bets.</p>
+<p>Since “Generative Agents: Interactive Simulacra of Human Behavior” (Park et al., 2023) showed that LLM-driven agents in a sandbox world could exhibit emergent social behaviors, research on Large Language Model (LLM) social simulation has bifurcated into two distinct streams: one demonstrating the ability of synthetic agents to emulate human personality and behavior, the other critically examining the validity and limitations of such simulations.</p>
+<p>This post briefly summarizes key findings from both sides of the debate.</p>
+<section id="advancements-the-case-for-silicon-sampling" class="level1">
+<h1>[+] Advancements: The Case for “Silicon Sampling”</h1>
+<p>Research in this category argues that LLMs have crossed a threshold where they can serve as valid proxies for human subjects in specific contexts (“Homo Silicus”).</p>
+<ol type="1">
+<li><strong>Emergent Social Dynamics</strong>: Agents placed in open-ended sandbox environments can spontaneously form relationships, plan joint activities, and diffuse information without explicit scripting. This suggests LLMs possess a rudimentary “social process” capability (Park et al., 2023).</li>
+<li><strong>Demographic Fidelity</strong>: When provided with detailed backstories (persona prompting), LLMs can accurately reproduce the survey distributions of specific human demographics (e.g., voting patterns of US voters), effectively allowing for “silicon sampling” (Argyle et al., 2023).</li>
+<li><strong>Replication of Classic Experiments</strong>: LLMs have successfully replicated results from canonical economic and psycholinguistic studies, such as the Ultimatum Game and the Milgram Experiment. They exhibit rational behaviors comparable to human economic agents in negotiation and trading scenarios (Aher et al., 2023; Horton, 2023).</li>
+<li><strong>PersonaLLM and Personality Traits</strong>: Research using established psychometric tests (e.g., the Big Five Inventory) has confirmed that LLMs can generate content that aligns with assigned personality profiles. Self-reported scores from these inventories were found to be consistent with designated personality types, and human evaluators can often perceive these traits in the models’ outputs (Jiang et al., 2023).</li>
+<li><strong>Improvability via Fine-Tuning</strong>: Moving beyond zero-shot prompting, fine-tuning models on actual social science datasets significantly boosts their ability to predict human behavior, suggesting that “superficial” simulation can be deepened with better data (Kolluri et al., 2025).</li>
+</ol>
 </section>
+<section id="challenges-the-boundaries-of-emulation" class="level1">
+<h1>[-] Challenges: The Boundaries of Emulation</h1>
+<p>Critics argue that while LLMs can mimic the outputs of human behavior, they fundamentally lack the internal cognitive processes of humans, leading to fragile simulations that break down under stress or scrutiny.</p>
+<ol type="1">
+<li><strong>Consistency &amp; Complexity Limits</strong>: While models can adopt a persona initially, they often struggle to maintain it over long conversations (persona drift), reverting to their default “helpful assistant” alignment or agreeing with the user (sycophancy) (Jiang et al., 2023). Furthermore, the robustness of a synthetic persona degrades as the social interaction becomes more complex; a model might “forget” who it is supposed to be when faced with multifaceted social dilemmas (Zhao et al., 2024).</li>
+<li><strong>The “Caricature” Problem</strong>: When asked to simulate specific identity groups (e.g., marginalized communities), LLMs often rely on flattened stereotypes rather than capturing the nuanced diversity of real individuals. This “algorithmic flattening” can reinforce bias rather than provide accurate representation (Cheng et al., 2024).</li>
+<li><strong>The “Scylla Ex Machina” Illusion</strong>: A critical theoretical finding is that valid outcomes (e.g., a correct survey response) do not imply valid processes. LLMs may arrive at a human-like answer through probability mechanisms that are entirely alien to human cognition, making them dangerous surrogates for causal research (Gao et al., 2025).</li>
+<li><strong>Cultural &amp; Contextual Blind Spots</strong>: Models trained primarily on Western data struggle to simulate the “public opinion” of non-Western or specific cultural contexts (e.g., German political nuance) without significant bias, limiting the global applicability of social simulation (ACL 2025 Case Study).</li>
+</ol>
 </section>
-<section id="the-overround" class="level2">
-<h2 class="anchored" data-anchor-id="the-overround">The Overround</h2>
-<p>By denoting the outcome probability with <span class="math inline">\(P_i\)</span>, and the amount of units wagered on the outcome with <span class="math inline">\(W_i\)</span>, the bookmaker’s profit if outcome <span class="math inline">\(i\)</span> occurs is:</p>
-<p><span class="math display">\[\text{Profit}_i = W_{\text{total}} - O_i W_i \tag{2}\]</span></p>
-<p>Which conveniently simplifies to the total <strong>Expected Profit</strong> for the entire book <span class="math inline">\(\Omega\)</span>:</p>
-<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N P_i (W_{\text{total}} - O_i W_i) \tag{3}\]</span></p>
-<p>In the context of a fair game, the payout coefficient expressed as decimal odds for any outcome is the inverse of the outcome’s underlying probability:</p>
-<p><span class="math display">\[O_i^{\text{fair}} = \frac{1}{P_i} \tag{4}\]</span></p>
-<p>So, the inverse of the decimal odds in <span class="math inline">\(\Omega\)</span> for outcome <span class="math inline">\(i\)</span> gives us the bookmaker’s <strong>Implied Probability</strong> for that outcome:</p>
-<p><span class="math display">\[\hat{P}_i = \frac{1}{O_i} \tag{5}\]</span></p>
-<p>By using (5), the bookmaker’s expected profit in equation (3) can be rewritten as:</p>
-<p><span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N W_i \left( 1 - \frac{P_i}{\hat{P}_i} \right) \tag{6}\]</span></p>
-<p>By examining equation (6), it is clear that for the expected profit to be positive, <span class="math inline">\(\Omega\)</span> must be structured so that the implied probabilities are bigger than the outcomes’ probabilities:</p>
-<p><span class="math display">\[\hat{P}_i &gt; P_i \tag{7}\]</span></p>
-<p>As long as the condition from (7) is verified, the bookmaker’s expected profit (6) is positive irrespective of the event’s outcome, and independently from the distribution of wagers. In other words, long-term profitability is ensured as long as the odds offered are always smaller than the fair odds:</p>
-<p><span class="math display">\[O_i &lt; O_i^{\text{fair}} \tag{8}\]</span></p>
-<p>Given a book <span class="math inline">\(\Omega\)</span>, the overround can be calculated from empirical data as follows:</p>
-<p><span class="math display">\[\text{Overround} = \left( \sum_{i=1}^N \frac{1}{O_i} \right) - 1 \tag{9}\]</span></p>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The consensus emerging in 2026 is that LLMs are powerful tools for generating synthetic data and prototyping social dynamics, but they remain imperfect surrogates for human cognition. The field is moving toward a hybrid model: using LLMs to augment, not replace, human participants, while developing rigorous “algorithmic fidelity” rubrics to catch stereotypes and persona drift.</p>
 </section>
-<section id="empirical-evidence" class="level2">
-<h2 class="anchored" data-anchor-id="empirical-evidence">Empirical Evidence</h2>
-<p>The plot below shows the percentage overround for Wimbledon 2023 matches calculated using historical odds offered by Bet365. For the 127 tennis matches considered, the bookmaker’s overround ranges from 1.95% to 5.9% with the most frequent overround percentage being around 5.55%.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F097a40f6-e45f-4877-8069-83faf97a6889_595x497.png" class="img-fluid figure-img"></p>
-<figcaption>Wimbledon 2023 Overround Plot</figcaption>
-</figure>
-</div>
-</section>
-<section id="simulation-study" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-study">Simulation Study</h2>
-<p>This section briefly illustrates the effectiveness of overrounding using a small simulation study.</p>
-<p><strong>Setting</strong> * A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins. * The underlying outcomes’ probabilities are set to .8 and .2 respectively. * On each event, 50 units are wagered on Team A and 50 units on Team B. * <strong>Bookmaker 1</strong> always offers odds correctly reflecting the outcomes’ probabilities (<strong>Fair Strategy</strong>). * <strong>Bookmaker 2</strong> makes mispricing mistakes offering odds 5% higher than the fair odds (<strong>Mispricing Strategy</strong>). * <strong>Bookmaker 3</strong> applies an overround of 5% (<strong>Overrounding Strategy</strong>).</p>
-<p><strong>Results</strong> The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../figs/bookies_1.png" class="img-fluid figure-img"></p>
-<figcaption>Simulation Results Plot</figcaption>
-</figure>
-</div>
-<p>As can be seen after 5000 events: * The bookmaker adopting the <strong>Overround Strategy</strong> is highly profitable with an average expected cumulative profit above 20,000 units. * The bookmaker offering <strong>Fair Odds</strong> has profits and losses balancing each other, ending up with no profit. * The bookmaker who is <strong>Mispricing</strong> the outcomes is losing more than -20,000 units.</p>
-</section>
-<section id="final-remarks" class="level2">
-<h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
-<p>The overround is a bookmaking tactic which consists of offering odds based on inflated estimates of the outcomes’ probabilities. Under certain conditions, this tactic allows the bookmaker to be profitable in the long run thanks to the expected value of his books designed to consistently be in his favor.</p>
-<p>Overrounding however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.</p>
-<p>In a future post, I will explore the scenarios where an overround alone isn’t enough to guarantee success, and how bookmakers react to protect their bottom line.</p>
+<section id="references" class="level1">
+<h1>References</h1>
+<p>Aher, G. V., Arriaga, R. I., &amp; Kalai, A. T. (2023). Using large language models to simulate multiple humans and replicate human subject studies. <em>Proceedings of the 40th International Conference on Machine Learning (ICML)</em>.</p>
+<p>Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J. R., Rytting, C., &amp; Williams, D. J. (2023). Out of one, many: Using language models to simulate human samples. <em>Political Analysis</em>, 31(3), 337-351.</p>
+<p>Cheng, M., et al.&nbsp;(2024). Large language models that replace human participants can harmfully misportray and flatten identity groups. <em>Nature Machine Intelligence</em>, 6, 311-322.</p>
+<p>Gao, Y., Lee, D., Burtch, G., &amp; Fazelpour, S. (2025). Take caution in using LLMs as human surrogates: Scylla ex machina. <em>Proceedings of the National Academy of Sciences (PNAS)</em>, 122(24).</p>
+<p>Horton, J. J. (2023). Large language models as simulated economic agents: What can we learn from Homo Silicus? <em>NBER Working Paper No.&nbsp;31122</em>.</p>
+<p>Jiang, H., et al.&nbsp;(2023). PersonaLLM: Investigating the ability of large language models to express personality traits. <em>Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL)</em>.</p>
+<p>Kolluri, A., Wu, S., Park, J. S., &amp; Bernstein, M. S. (2025). Finetuning LLMs for human behavior prediction in social science experiments. <em>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>.</p>
+<p>Park, J. S., et al.&nbsp;(2023). Generative agents: Interactive simulacra of human behavior. <em>Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST)</em>.</p>
+<p>Zhao, Y., et al.&nbsp;(2024). Evaluating the ability of large language models to emulate personality. <em>Scientific Reports</em>, 14, 1534.</p>
+<p>ACL Case Study (2025). Algorithmic fidelity of large language models in generating synthetic German public opinions. <em>Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics</em>.</p>
 
 
 </section>

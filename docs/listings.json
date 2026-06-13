@@ -2,9 +2,12 @@
   {
     "listing": "/SYGACT.html",
     "items": [
-      "/SYGACT/optimize-test-winners/index.html",
+      "/SYGACT/ab-testing-business-failures/index.html",
+      "/SYGACT/verasight-research-summary/index.html",
+      "/SYGACT/llms-commercial-applications/index.html",
+      "/SYGACT/llms-social-simulation/index.html",
       "/SYGACT/bookmakers-pricing-tactics/index.html",
-      "/SYGACT/ab-testing-business-failures/index.html"
+      "/SYGACT/optimize-test-winners/index.html"
     ]
   }
 ]
