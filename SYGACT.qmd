@@ -6,7 +6,7 @@ image: figs/profile.jpeg
 listing:
   contents: 
     - "SYGACT/ab-testing-business-failures/index.qmd"
-    - "SYGACT/verasight-research-summary/index.qmd"
+    - "SYGACT/silicon-sampling-empirical/index.qmd"
     - "SYGACT/llms-commercial-applications/index.qmd"
     - "SYGACT/llms-social-simulation/index.qmd"
     - "SYGACT/bookmakers-pricing-tactics/index.qmd"
