@@ -433,7 +433,12 @@ window.Quarto = {
 <section id="the-results" class="level3">
 <h3 class="anchored" data-anchor-id="the-results">The Results</h3>
 <p>On the surface, the results looked promising. For Trump’s approval, the best-performing model (GPT-4o-mini) was only <strong>4 percentage points</strong> off from the human topline.</p>
-<p>However, a detailed analysis revealed significant cracks: * <strong>Subgroup Erasure:</strong> The model was disastrous at predicting minority opinions. For Black respondents, the error on Trump disapproval ballooned to <strong>15-20 points</strong>. * <strong>The Uncertainty Gap:</strong> Humans are often undecided. In the real poll, 3% of people chose “Don’t Know” for Trump approval. The LLM? <strong>0%</strong>. * <strong>The Zoning Failure:</strong> On the “Abundance Agenda” (a non-partisan, novel topic), the LLM was completely lost. It flipped the leading position, turning a 15-point human preference for keeping zoning laws into an 18-point AI preference for changing them.</p>
+<p>However, a detailed analysis revealed significant cracks:</p>
+<ul>
+<li><strong>Subgroup Erasure:</strong> The model was disastrous at predicting minority opinions. For Black respondents, the error on Trump disapproval ballooned to <strong>15-20 points</strong>.</li>
+<li><strong>The Uncertainty Gap:</strong> Humans are often undecided. In the real poll, 3% of people chose “Don’t Know” for Trump approval. The LLM? <strong>0%</strong>.</li>
+<li><strong>The Zoning Failure:</strong> On the “Abundance Agenda” (a non-partisan, novel topic), the LLM was completely lost. It flipped the leading position, turning a 15-point human preference for keeping zoning laws into an 18-point AI preference for changing them.</li>
+</ul>
 </section>
 </section>
 <section id="report-ii-can-more-data-fix-the-problem" class="level2">
@@ -449,7 +454,12 @@ window.Quarto = {
 </section>
 <section id="the-results-the-garden-of-forking-paths" class="level3">
 <h3 class="anchored" data-anchor-id="the-results-the-garden-of-forking-paths">The Results: The “Garden of Forking Paths”</h3>
-<p>To the researchers’ surprise, <strong>more data did not mean better accuracy.</strong> * For Trump approval, the models with <em>more</em> information actually performed <strong>worse</strong> than the simpler models from the first report. * While the model hit a “bullseye” on the Generic Ballot (within 1 point), it was likely “cheating”—simply echoing the partisanship and voting history already present in the prompt. * On immigration policy, even with all the extra data, the error remained at a massive <strong>11.3 percentage points</strong>.</p>
+<p>To the researchers’ surprise, <strong>more data did not mean better accuracy.</strong></p>
+<ul>
+<li>For Trump approval, the models with <em>more</em> information actually performed <strong>worse</strong> than the simpler models from the first report.</li>
+<li>While the model hit a “bullseye” on the Generic Ballot (within 1 point), it was likely “cheating”—simply echoing the partisanship and voting history already present in the prompt.</li>
+<li>On immigration policy, even with all the extra data, the error remained at a massive <strong>11.3 percentage points</strong>.</li>
+</ul>
 <p>The conclusion was clear: LLM results are highly sensitive to how the prompt is written (the “forking paths”), and there is no way for a researcher to know if adding more data is helping or hurting without already knowing the “true” human answer.</p>
 </section>
 </section>
@@ -462,7 +472,13 @@ window.Quarto = {
 </section>
 <section id="the-results-a-bitter-brew" class="level3">
 <h3 class="anchored" data-anchor-id="the-results-a-bitter-brew">The Results: A Bitter Brew</h3>
-<p>The relative accuracy found in political polling vanished when applied to consumer behavior. * <strong>The Error Explosion:</strong> While politics saw errors around 3-4 points in some cases, the coffee study had a <strong>mean absolute error of 19.8 points</strong>. * <strong>Stereotyping “Heavy” Users:</strong> The LLM consistently overestimated consumption. It predicted 91% of adults drink coffee daily (actual: 56%) and failed to predict <em>any</em> non-drinkers (actual: 17%). * <strong>The Failure of Novelty:</strong> When asked to rank six hypothetical Starbucks drinks, the LLM overwhelmingly flocked to “Autumn Ember” (66%), while human preferences were nearly evenly split (18-21%) across multiple options. The model’s inability to simulate taste preferences represents a fundamental limitation for product development. * <strong>The “Digital Twin” Limit:</strong> Adding domain-specific data (like existing coffee habits) reduced error by about 50% (from 20 points down to 9), but the models still missed the “wide distribution” of real human attitudes. For example, the LLM placed zero consumers in the “About the same” price category for Starbucks, whereas 16% of humans chose it.</p>
+<p>The relative accuracy found in political polling vanished when applied to consumer behavior.</p>
+<ul>
+<li><strong>The Error Explosion:</strong> While politics saw errors around 3-4 points in some cases, the coffee study had a <strong>mean absolute error of 19.8 points</strong>.</li>
+<li><strong>Stereotyping “Heavy” Users:</strong> The LLM consistently overestimated consumption. It predicted 91% of adults drink coffee daily (actual: 56%) and failed to predict <em>any</em> non-drinkers (actual: 17%).</li>
+<li><strong>The Failure of Novelty:</strong> When asked to rank six hypothetical Starbucks drinks, the LLM overwhelmingly flocked to “Autumn Ember” (66%), while human preferences were nearly evenly split (18-21%) across multiple options. The model’s inability to simulate taste preferences represents a fundamental limitation for product development.</li>
+<li><strong>The “Digital Twin” Limit:</strong> Adding domain-specific data (like existing coffee habits) reduced error by about 50% (from 20 points down to 9), but the models still missed the “wide distribution” of real human attitudes. For example, the LLM placed zero consumers in the “About the same” price category for Starbucks, whereas 16% of humans chose it.</li>
+</ul>
 </section>
 <section id="key-insight-culture-vs.-nuance" class="level3">
 <h3 class="anchored" data-anchor-id="key-insight-culture-vs.-nuance">Key Insight: Culture vs.&nbsp;Nuance</h3>

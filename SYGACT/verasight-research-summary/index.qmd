@@ -37,6 +37,7 @@ The first investigation [1] focused on the heavy hitters of polling: **Trump App
 On the surface, the results looked promising. For Trump’s approval, the best-performing model (GPT-4o-mini) was only **4 percentage points** off from the human topline. 
 
 However, a detailed analysis revealed significant cracks:
+
 *   **Subgroup Erasure:** The model was disastrous at predicting minority opinions. For Black respondents, the error on Trump disapproval ballooned to **15-20 points**.
 *   **The Uncertainty Gap:** Humans are often undecided. In the real poll, 3% of people chose "Don't Know" for Trump approval. The LLM? **0%**. 
 *   **The Zoning Failure:** On the "Abundance Agenda" (a non-partisan, novel topic), the LLM was completely lost. It flipped the leading position, turning a 15-point human preference for keeping zoning laws into an 18-point AI preference for changing them.
@@ -51,7 +52,8 @@ If a basic persona isn't enough, what if we give the AI more "context"? Report I
 *   **Attitudinal Anchors:** Telling the LLM how the respondent felt about a related topic (e.g., Trump’s tariff policy) before asking for their approval rating.
 
 ### The Results: The "Garden of Forking Paths"
-To the researchers' surprise, **more data did not mean better accuracy.** 
+To the researchers' surprise, **more data did not mean better accuracy.**
+
 *   For Trump approval, the models with *more* information actually performed **worse** than the simpler models from the first report.
 *   While the model hit a "bullseye" on the Generic Ballot (within 1 point), it was likely "cheating"—simply echoing the partisanship and voting history already present in the prompt.
 *   On immigration policy, even with all the extra data, the error remained at a massive **11.3 percentage points**.
@@ -69,6 +71,7 @@ Researchers compared human responses to LLM (GPT-5) simulations across two studi
 
 ### The Results: A Bitter Brew
 The relative accuracy found in political polling vanished when applied to consumer behavior.
+
 *   **The Error Explosion:** While politics saw errors around 3-4 points in some cases, the coffee study had a **mean absolute error of 19.8 points**.
 *   **Stereotyping "Heavy" Users:** The LLM consistently overestimated consumption. It predicted 91% of adults drink coffee daily (actual: 56%) and failed to predict *any* non-drinkers (actual: 17%).
 *   **The Failure of Novelty:** When asked to rank six hypothetical Starbucks drinks, the LLM overwhelmingly flocked to "Autumn Ember" (66%), while human preferences were nearly evenly split (18-21%) across multiple options. The model's inability to simulate taste preferences represents a fundamental limitation for product development.
