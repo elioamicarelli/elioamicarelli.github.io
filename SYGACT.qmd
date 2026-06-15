@@ -1,6 +1,8 @@
 ---
 title: "SYGACT"
 subtitle: "Systems, Games, and Behavior"
+description: "A collection of my thoughts and research on systems, games, and human behavior."
+image: figs/profile.jpeg
 listing:
   contents: 
     - "SYGACT/ab-testing-business-failures/index.qmd"

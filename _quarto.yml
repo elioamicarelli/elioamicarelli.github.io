@@ -6,6 +6,10 @@ website:
   site-url: https://www.elioamicarelli.com
   favicon: figs/fv.png
   google-analytics: "G-VLRS3DJ725"
+  open-graph:
+    site-name: "Elio Amicarelli"
+    locale: en_US
+  twitter-card: true
   navbar:
     left:
       - href: about.qmd

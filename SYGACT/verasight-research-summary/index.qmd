@@ -5,6 +5,14 @@ author: "Elio Amicarelli"
 categories: ["AI research"]
 image: ../../figs/silicon_sample_3.png
 description: "A review of Verasight's research on 'Silicon Sampling' and its limitations in market and political research."
+open-graph:
+  title: "Can LLMs replace human survey respondents? The reality of 'Silicon Sampling'"
+  description: "I reviewed Verasight's latest research on synthetic respondents. Here is why LLMs aren't ready to replace humans in market research just yet."
+  image: ../../figs/silicon_sample_3.png
+twitter-card:
+  title: "Can LLMs replace human survey respondents?"
+  description: "A deep dive into the limitations of Silicon Sampling for social simulation."
+  image: ../../figs/silicon_sample_3.png
 ---
 
 Can LLMs replace human survey respondents? Over the past year, the survey research company Verasight published five empirical studies tackling this question from different angles. Part three of my LLMs for Social Simulation series reviews their research to investigate whether Silicon Sampling can be reliably used for surveys and market research. 
