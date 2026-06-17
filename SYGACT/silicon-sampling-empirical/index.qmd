@@ -114,6 +114,7 @@ Instead of simple persona prompts, THESEUS used a multi-stage process:
 
 ### The Results: The Success of Polarization, the Failure of Salience
 The THESEUS pipeline achieved the highest accuracy yet for high-profile political items, but failed elsewhere:
+
 *   **Topline Success:** Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) fell within the range of normal sampling noise for a human poll.
 *   **Low-Salience Failure:** For "out-of-sample" or low-salience topics, the model missed badly. Awareness of recent events in Venezuela was off by **12.8 points**, and federal budget tradeoffs were off by **11 points**.
 *   **The Subgroup Gap:** Even when toplines were accurate, subgroup errors (e.g., by Party ID) remained high, often exceeding **10-13 points**. The LLM systematically biased partisan groups toward the center (50/50).
