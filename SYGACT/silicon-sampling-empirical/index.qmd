@@ -115,12 +115,17 @@ Instead of simple persona prompts, THESEUS used a multi-stage process:
 ### The Results: The Success of Polarization, the Failure of Salience
 The THESEUS pipeline achieved the highest accuracy yet for high-profile political items, but failed elsewhere:
 
-*   **Topline Success:** Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) fell within the range of normal sampling noise for a human poll.
+*   **Topline Success:** Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) is close to the range of normal sampling noise for a human poll.
 *   **Low-Salience Failure:** For "out-of-sample" or low-salience topics, the model missed badly. Awareness of recent events in Venezuela was off by **12.8 points**, and federal budget tradeoffs were off by **11 points**.
 *   **The Subgroup Gap:** Even when toplines were accurate, subgroup errors (e.g., by Party ID) remained high, often exceeding **10-13 points**. The LLM systematically biased partisan groups toward the center (50/50).
 
-### Key Insight: The Scaling Myth
-Perhaps the most significant finding was that **increasing the sample size did not help.** Increasing the agent pool from 500 to 5,000 had almost no impact on accuracy. This proves that the errors in synthetic polling are **systematic and structural (model bias)**, not statistical noise. You cannot "spend" your way to accuracy by running more agents.
+### Key Insights
+
+THESEUS works when Party ID,
+ideology, and vote choice are mainly responsible to explain the response variance. But it struggles when the answer depends
+on new and still unsettled issues.
+
+Another interesting  finding was that **increasing the sample size did not help.** Increasing the agent pool from 500 to 5,000 had almost no impact on accuracy. This proves that the errors in synthetic polling are **systematic and structural (model bias)**, not statistical noise. You cannot "spend" your way to accuracy by generating more synthetic respondents.
 
 ## The Verdict: Why LLMs Aren't Ready for Market Research
 
