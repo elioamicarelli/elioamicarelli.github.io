@@ -7,7 +7,7 @@ categories: [MODELING, SPBM SERIES]
 image: ../../figs/bookies_2.png
 ---
 
-Building on the previous analysis of the overround, this post shows that a bookmaker's profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors' preferences.
+Building on the [previous analysis of the overround](https://www.elioamicarelli.com/SYGACT/bookmakers-pricing-tactics/){target="_blank"}, this post shows that a bookmaker's profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors' preferences.
 
 ## 1. Expected Profit is Independent of Bettor Preferences
 
@@ -75,7 +75,7 @@ It is important to note that when facing biased bettor profiles, the bookmaker's
 
 ![Average Profit converges to the Expected Profit](../../figs/wagers_balancing_1.png)
 
-## 2. The Actual Profits is Impacted by Bettors' Preferences
+## 2. The Actual Profit is Impacted by Bettors' Preferences
 
 Good estimates of outcome probabilities and the application of the overround are not sufficient to protect the bookmaker from risk and liability. If wager shares depart from the outcome probabilities and the bookmaker ignores this distribution, they can suffer significant losses.
 

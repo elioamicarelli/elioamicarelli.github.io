@@ -162,5 +162,11 @@ figcaption, .figure-caption {
   font-weight: bold !important;
 }
 
+/* Prevent font-size compounding of links in blog posts */
+.blog-post .content a {
+  font-size: inherit !important;
+}
+
+
 
 

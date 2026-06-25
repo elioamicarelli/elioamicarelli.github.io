@@ -340,7 +340,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
   </ul></li>
-  <li><a href="#the-actual-profits-is-impacted-by-bettors-preferences" id="toc-the-actual-profits-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profits-is-impacted-by-bettors-preferences">2. The Actual Profits is Impacted by Bettors’ Preferences</a>
+  <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">2. The Actual Profit is Impacted by Bettors’ Preferences</a>
   <ul class="collapse">
   <li><a href="#simulation-1" id="toc-simulation-1" class="nav-link" data-scroll-target="#simulation-1">Simulation</a></li>
   </ul></li>
@@ -392,7 +392,7 @@ window.Quarto = {
 </header>
 
 
-<p>Building on the previous analysis of the overround, this post shows that a bookmaker’s profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors’ preferences.</p>
+<p>Building on the <a href="https://www.elioamicarelli.com/SYGACT/bookmakers-pricing-tactics/" target="_blank">previous analysis of the overround</a>, this post shows that a bookmaker’s profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors’ preferences.</p>
 <section id="expected-profit-is-independent-of-bettor-preferences" class="level2">
 <h2 class="anchored" data-anchor-id="expected-profit-is-independent-of-bettor-preferences">1. Expected Profit is Independent of Bettor Preferences</h2>
 <p>Let’s start by showing that when the bookmaker offers odds consistent with the outcome probabilities, their expected profit is constant: it is completely independent of the bettor preferences <span class="math inline">\(w_i\)</span>, and depends only on the total pool of wagers <span class="math inline">\(W_{\text{total}}\)</span> and the overround <span class="math inline">\(\epsilon\)</span>.</p>
@@ -437,8 +437,8 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \fra
 </div>
 </section>
 </section>
-<section id="the-actual-profits-is-impacted-by-bettors-preferences" class="level2">
-<h2 class="anchored" data-anchor-id="the-actual-profits-is-impacted-by-bettors-preferences">2. The Actual Profits is Impacted by Bettors’ Preferences</h2>
+<section id="the-actual-profit-is-impacted-by-bettors-preferences" class="level2">
+<h2 class="anchored" data-anchor-id="the-actual-profit-is-impacted-by-bettors-preferences">2. The Actual Profit is Impacted by Bettors’ Preferences</h2>
 <p>Good estimates of outcome probabilities and the application of the overround are not sufficient to protect the bookmaker from risk and liability. If wager shares depart from the outcome probabilities and the bookmaker ignores this distribution, they can suffer significant losses.</p>
 <p>To show this, consider the variance of the bookmaker’s profit across outcomes: <span class="math display">\[\text{Var}(\text{Profit}) = \sum_{i=1}^N P_i \left( \text{Profit}_i - E[\text{Profit}] \right)^2 \tag{7}\]</span></p>
 <p>Substituting the formulas for <span class="math inline">\(\text{Profit}_i\)</span> and <span class="math inline">\(E[\text{Profit}]\)</span>: <span class="math display">\[\begin{aligned}
