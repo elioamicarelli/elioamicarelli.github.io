@@ -8,7 +8,7 @@
 
 <meta name="author" content="Elio Amicarelli">
 <meta name="dcterms.date" content="2026-01-15">
-<meta name="description" content="Why the overround alone doesn’t guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
+<meta name="description" content="Why doesn’t the overround alone guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
 
 <title>The Overround is Not Enough: How Bettors’ Preferences Shape the Profit Risk for Bookmakers – Elio Amicarelli</title>
 <style>
@@ -118,14 +118,14 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="The Overround is Not Enough: How Bettors’ Preferences Shape the Profit Risk for Bookmakers – Elio Amicarelli">
-<meta property="og:description" content="Why the overround alone doesn’t guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
+<meta property="og:description" content="Why doesn’t the overround alone guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
 <meta property="og:image" content="https://www.elioamicarelli.com/figs/bookies_2.png">
 <meta property="og:site_name" content="Elio Amicarelli">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="The Overround is Not Enough: How Bettors’ Preferences Shape the Profit Risk for Bookmakers – Elio Amicarelli">
-<meta name="twitter:description" content="Why the overround alone doesn’t guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
+<meta name="twitter:description" content="Why doesn’t the overround alone guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.">
 <meta name="twitter:image" content="https://www.elioamicarelli.com/figs/bookies_2.png">
 <meta name="twitter:image-height" content="960">
 <meta name="twitter:image-width" content="1344">
@@ -336,14 +336,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#expected-profit-is-independent-of-bettor-preferences" id="toc-expected-profit-is-independent-of-bettor-preferences" class="nav-link active" data-scroll-target="#expected-profit-is-independent-of-bettor-preferences">Expected Profit is Independent of Bettor Preferences</a>
-  <ul class="collapse">
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
-  </ul></li>
-  <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</a>
-  <ul class="collapse">
-  <li><a href="#simulation-1" id="toc-simulation-1" class="nav-link" data-scroll-target="#simulation-1">Simulation</a></li>
-  </ul></li>
+  <li><a href="#expected-profit-is-independent-of-bettor-preferences" id="toc-expected-profit-is-independent-of-bettor-preferences" class="nav-link active" data-scroll-target="#expected-profit-is-independent-of-bettor-preferences">Expected Profit is Independent of Bettor Preferences</a></li>
+  <li><a href="#simulation-study" id="toc-simulation-study" class="nav-link" data-scroll-target="#simulation-study">Simulation Study</a></li>
+  <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</a></li>
+  <li><a href="#simulation-study-1" id="toc-simulation-study-1" class="nav-link" data-scroll-target="#simulation-study-1">Simulation Study</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
@@ -363,7 +359,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Why the overround alone doesn’t guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.
+    Why doesn’t the overround alone guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors’ preferences shape the risk profile of the bookmaker’s profit.
   </div>
 </div>
 
@@ -421,8 +417,9 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \fra
 E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) \\
 &amp;= W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right)
 \end{aligned}\tag{6}\]</span></p>
-<section id="simulation" class="level3">
-<h3 class="anchored" data-anchor-id="simulation">Simulation</h3>
+</section>
+<section id="simulation-study" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-study">Simulation Study</h2>
 <p>In this Monte Carlo simulation, I test the impact of different bettor allocation preferences on the bookmaker’s average profit.</p>
 <p><strong>Bookmaker</strong></p>
 <p>In the simulation, the bookmaker targets a profit margin (overround) of <span class="math inline">\(\epsilon = 5\% = 0.05\)</span> and offers odds consistent with the true outcome probabilities plus the overround: <span class="math inline">\(\hat{P}_j = P_j (1 + \epsilon) \implies \hat{P} = [0.735, 0.315]\)</span> with decimal odds <span class="math inline">\(O_j = \frac{1}{\hat{P}_j} \implies O \approx [1.3605, 3.1746]\)</span>.</p>
@@ -445,7 +442,6 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 </figure>
 </div>
 </section>
-</section>
 <section id="the-actual-profit-is-impacted-by-bettors-preferences" class="level2">
 <h2 class="anchored" data-anchor-id="the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</h2>
 <p>Good estimates of outcome probabilities and the application of the overround are not sufficient to protect the bookmaker from risk and liability. If wager shares depart from the outcome probabilities and the bookmaker ignores this distribution, they can suffer significant losses.</p>
@@ -465,8 +461,9 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <li><p>The variance is zero if and only if <span class="math inline">\(w_i = P_i\)</span> for all <span class="math inline">\(i\)</span>. In this case, the bookmaker is perfectly hedged and earns a risk-free profit of <span class="math inline">\(W_{\text{total}} \frac{\epsilon}{1+\epsilon}\)</span> regardless of which outcome occurs.</p></li>
 <li><p>If the wager distribution <span class="math inline">\(w\)</span> deviates from the true probabilities <span class="math inline">\(P\)</span>, the variance increases. If <span class="math inline">\(w_i &gt; P_i (1+\epsilon)\)</span> for some outcome <span class="math inline">\(i\)</span>, the realized profit <span class="math inline">\(\text{Profit}_i\)</span> becomes negative, meaning the bookmaker will suffer a net loss if outcome <span class="math inline">\(R_i\)</span> is realized.</p></li>
 </ul>
-<section id="simulation-1" class="level3">
-<h3 class="anchored" data-anchor-id="simulation-1">Simulation</h3>
+</section>
+<section id="simulation-study-1" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-study-1">Simulation Study</h2>
 <p>I use a battery of simulations to examine how the bookmaker’s cumulative profit behaves when facing different bettor preference structures.</p>
 <p>The first plot shows three cumulative profit series for each preference structure. When wagers are placed consistently with the outcome probabilities (‘No Bias’), the bookmaker’s profit increases linearly with zero deviation from the expectation. On the contrary, in scenarios where wager allocation departs from the underlying outcome probabilities, the profit exhibits massive swings.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -492,7 +489,6 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <figcaption>Distribution of Maximum Drawdown</figcaption>
 </figure>
 </div>
-</section>
 </section>
 <section id="conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>

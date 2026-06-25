@@ -2,7 +2,7 @@
 title: "The Overround is Not Enough: How Bettors' Preferences Shape the Profit Risk for Bookmakers"
 date: "2026-01-15"
 author: "Elio Amicarelli"
-description: "Why the overround alone doesn't guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors' preferences shape the risk profile of the bookmaker's profit."
+description: "Why doesn't the overround alone guarantee success for a bookmaker? This post provides a mathematical and empirical analysis showing how bettors' preferences shape the risk profile of the bookmaker's profit."
 categories: [MODELING, SPBM SERIES]
 image: ../../figs/bookies_2.png
 ---
@@ -54,7 +54,7 @@ E[\text{Profit}] &= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) \
 &= W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right) 
 \end{aligned}\tag{6}$$
 
-### Simulation
+## Simulation Study
 
 In this Monte Carlo simulation, I test the impact of different bettor allocation preferences on the bookmaker's average profit.
 
@@ -111,7 +111,7 @@ From this equation, two crucial conclusions can be drawn:
 
 - If the wager distribution $w$ deviates from the true probabilities $P$, the variance increases. If $w_i > P_i (1+\epsilon)$ for some outcome $i$, the realized profit $\text{Profit}_i$ becomes negative, meaning the bookmaker will suffer a net loss if outcome $R_i$ is realized.
 
-### Simulation
+## Simulation Study
 
 I use a battery of simulations to examine how the bookmaker's cumulative profit behaves when facing different bettor preference structures.
 

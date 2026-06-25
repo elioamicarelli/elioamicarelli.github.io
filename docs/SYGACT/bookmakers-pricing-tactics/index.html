@@ -398,7 +398,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-bookmakers-problem">The Bookmaker’s Problem</h2>
 <p>I stick with the decimal representation of odds so that <span class="math inline">\(O_i = 1.5\)</span> means that each unit wagered on the outcome <span class="math inline">\(R_i\)</span> will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.</p>
 <p>The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!</p>
-<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
+<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners, netting zero profit.</p>
 <p>So, the bookmaker has to guarantee a profit for the bettor on all outcomes while ensuring his own profitability. In order to do so, he must apply a pricing strategy to the odds that ensure a profit. This is where the <strong>overround</strong> comes into play. What follow is an analytical and empirical study of such strategy.</p>
 <section id="defining-a-book" class="level3">
 <h3 class="anchored" data-anchor-id="defining-a-book">Defining a Book</h3>
@@ -443,9 +443,18 @@ window.Quarto = {
 </section>
 <section id="simulation-study" class="level2">
 <h2 class="anchored" data-anchor-id="simulation-study">Simulation Study</h2>
-<p>This section briefly illustrates the effectiveness of overrounding using a small simulation study.</p>
-<p><strong>Setting</strong> * A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins. * The underlying outcomes’ probabilities are set to .8 and .2 respectively. * On each event, 50 units are wagered on Team A and 50 units on Team B. * <strong>Bookmaker 1</strong> always offers odds correctly reflecting the outcomes’ probabilities (<strong>Fair Strategy</strong>). * <strong>Bookmaker 2</strong> makes mispricing mistakes offering odds 5% higher than the fair odds (<strong>Mispricing Strategy</strong>). * <strong>Bookmaker 3</strong> applies an overround of 5% (<strong>Overrounding Strategy</strong>).</p>
-<p><strong>Results</strong> The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.</p>
+<p>This section briefly illustrates the effectiveness of the overround using a small simulation study.</p>
+<p><strong>Setting</strong></p>
+<ul>
+<li>A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins.</li>
+<li>The underlying outcomes’ probabilities are set to .8 and .2 respectively.</li>
+<li>On each event, 50 units are wagered on Team A and 50 units on Team B.</li>
+<li><strong>Bookmaker 1</strong> always offers odds correctly reflecting the outcomes’ probabilities (Fair Strategy).</li>
+<li><strong>Bookmaker 2</strong> makes mispricing mistakes offering odds 5% higher than the fair odds (Mispricing Strategy).</li>
+<li><strong>Bookmaker 3</strong> applies an overround of 5% (Overround Strategy).</li>
+</ul>
+<p><strong>Results</strong></p>
+<p>The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/bookies_1.png" class="img-fluid figure-img"></p>
@@ -462,7 +471,7 @@ window.Quarto = {
 <section id="final-remarks" class="level2">
 <h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
 <p>The overround is a bookmaking tactic which consists of offering odds based on inflated estimates of the outcomes’ probabilities. Under certain conditions, this tactic allows the bookmaker to be profitable in the long run thanks to the expected value of his books designed to consistently be in his favor.</p>
-<p>Overrounding however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.</p>
+<p>The overround, however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.</p>
 <p>In a future post, I will explore the scenarios where an overround alone isn’t enough to guarantee success, and how bookmakers react to protect their bottom line.</p>
 
 

@@ -19,7 +19,7 @@ I stick with the decimal representation of odds so that $O_i = 1.5$ means that e
 
 The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!
 
-To visualize the problem, consider a simple **coin flip**. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If $\$100$ is bet on Heads and $\$100$ on Tails, the bookmaker cashes in $\$200$ and pays out exactly $\$200$ to the winners—netting zero profit.
+To visualize the problem, consider a simple **coin flip**. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If $\$100$ is bet on Heads and $\$100$ on Tails, the bookmaker cashes in $\$200$ and pays out exactly $\$200$ to the winners, netting zero profit.
 
 So, the bookmaker has to guarantee a profit for the bettor on all outcomes while ensuring his own profitability. In order to do so, he must apply a pricing strategy to the odds that ensure a profit. This is where the **overround** comes into play. What follow is an analytical and empirical study of such strategy.
 
@@ -78,17 +78,19 @@ The plot below shows the percentage overround for Wimbledon 2023 matches calcula
 
 ## Simulation Study
 
-This section briefly illustrates the effectiveness of overrounding using a small simulation study.
+This section briefly illustrates the effectiveness of the overround using a small simulation study.
 
 **Setting**
+
 *   A series of 5000 sport events is simulated with each event having two possible outcomes: either Team A wins or Team B wins.
 *   The underlying outcomes’ probabilities are set to .8 and .2 respectively.
 *   On each event, 50 units are wagered on Team A and 50 units on Team B.
-*   **Bookmaker 1** always offers odds correctly reflecting the outcomes’ probabilities (**Fair Strategy**).
-*   **Bookmaker 2** makes mispricing mistakes offering odds 5% higher than the fair odds (**Mispricing Strategy**).
-*   **Bookmaker 3** applies an overround of 5% (**Overrounding Strategy**).
+*   **Bookmaker 1** always offers odds correctly reflecting the outcomes’ probabilities (Fair Strategy).
+*   **Bookmaker 2** makes mispricing mistakes offering odds 5% higher than the fair odds (Mispricing Strategy).
+*   **Bookmaker 3** applies an overround of 5% (Overround Strategy).
 
 **Results**
+
 The results below compare the evolution of the bookmakers’ profits under the three different pricing strategies.
 
 ![Simulation Results Plot](../../figs/bookies_1.png)
@@ -103,7 +105,7 @@ As can be seen after 5000 events:
 
 The overround is a bookmaking tactic which consists of offering odds based on inflated estimates of the outcomes' probabilities. Under certain conditions, this tactic allows the bookmaker to be profitable in the long run thanks to the expected value of his books designed to consistently be in his favor.
 
-Overrounding however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.
+The overround, however, isn’t the only tool used by bookmakers to design profitable pricing systems. Other factors, such as wagers preferences must be taken into account as they can have a considerable impact on the bookmaker overall profitability.
 
 In a future post, I will explore the scenarios where an overround alone isn't enough to guarantee success, and how bookmakers react to protect their bottom line.
 
