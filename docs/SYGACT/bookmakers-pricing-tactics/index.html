@@ -397,10 +397,9 @@ window.Quarto = {
 <section id="the-bookmakers-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-bookmakers-problem">The Bookmaker’s Problem</h2>
 <p>I stick with the decimal representation of odds so that <span class="math inline">\(O_i = 1.5\)</span> means that each unit wagered on the outcome <span class="math inline">\(R_i\)</span> will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.</p>
-<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
-<p>A bookmaker, however, might offer odds of 1.90 for both. Now, they still cash in <span class="math inline">\(\$200\)</span>, but only pay out <span class="math inline">\(\$190\)</span> to the winner. That <span class="math inline">\(\$10\)</span> difference is the <strong>Overround</strong> in action. It ensures, under certain conditions, that regardless of how the coin lands, the bookmaker retains a portion of the total wagers.</p>
 <p>The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!</p>
-<p>What follow in an analytical and empirical analysis of the overround.</p>
+<p>To visualize the problem, consider a simple <strong>coin flip</strong>. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If <span class="math inline">\(\$100\)</span> is bet on Heads and <span class="math inline">\(\$100\)</span> on Tails, the bookmaker cashes in <span class="math inline">\(\$200\)</span> and pays out exactly <span class="math inline">\(\$200\)</span> to the winners—netting zero profit.</p>
+<p>So, the bookmaker has to guarantee a profit for the bettor on all outcomes while ensuring his own profitability. In order to do so, he must apply a pricing strategy to the odds that ensure a profit. This is where the <strong>overround</strong> comes into play. What follow is an analytical and empirical study of such strategy.</p>
 <section id="defining-a-book" class="level3">
 <h3 class="anchored" data-anchor-id="defining-a-book">Defining a Book</h3>
 <p>For a future event with a number of <span class="math inline">\(N\)</span> mutually exclusive possible outcomes, define a <strong>Book</strong> on that event as a finite set of mapping rules <span class="math inline">\(\Omega\)</span>, where:</p>
@@ -453,7 +452,12 @@ window.Quarto = {
 <figcaption>Simulation Results Plot</figcaption>
 </figure>
 </div>
-<p>As can be seen after 5000 events: * The bookmaker adopting the <strong>Overround Strategy</strong> is highly profitable with an average expected cumulative profit above 20,000 units. * The bookmaker offering <strong>Fair Odds</strong> has profits and losses balancing each other, ending up with no profit. * The bookmaker who is <strong>Mispricing</strong> the outcomes is losing more than -20,000 units.</p>
+<p>As can be seen after 5000 events:</p>
+<ul>
+<li>The bookmaker adopting the <strong>Overround Strategy</strong> is highly profitable with an average expected cumulative profit above 20,000 units.</li>
+<li>The bookmaker offering <strong>Fair Odds</strong> has profits and losses balancing each other, ending up with no profit.</li>
+<li>The bookmaker who is <strong>Mispricing</strong> the outcomes is losing more than -20,000 units.</li>
+</ul>
 </section>
 <section id="final-remarks" class="level2">
 <h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>

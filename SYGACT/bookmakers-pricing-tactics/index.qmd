@@ -17,13 +17,11 @@ So, how do bookmakers ensure that these guaranteed payouts don’t lead to losse
 
 I stick with the decimal representation of odds so that $O_i = 1.5$ means that each unit wagered on the outcome $R_i$ will return 1.5 units if that outcome is realized. For example, with odds 1.5, a $10 winning bet will result in a $15 payout for a profit of $5.
 
-To visualize the problem, consider a simple **coin flip**. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If $\$100$ is bet on Heads and $\$100$ on Tails, the bookmaker cashes in $\$200$ and pays out exactly $\$200$ to the winners—netting zero profit.
-
-A bookmaker, however, might offer odds of 1.90 for both. Now, they still cash in $\$200$, but only pay out $\$190$ to the winner. That $\$10$ difference is the **Overround** in action. It ensures, under certain conditions, that regardless of how the coin lands, the bookmaker retains a portion of the total wagers.
-
 The bookmaker’s problem starts from the fact that on all prices he sets, the profit for the bettor must be greater than zero. In order to be attractive for wagerers, all the odds the bookmaker provides must result in a wagerer’s profit in case of victory. Nobody would bet on an outcome just for the sake of risking losing money!
 
-What follow in an analytical and empirical analysis of the overround.
+To visualize the problem, consider a simple **coin flip**. In a perfectly fair world, the odds for both Heads and Tails would be 2.0. If $\$100$ is bet on Heads and $\$100$ on Tails, the bookmaker cashes in $\$200$ and pays out exactly $\$200$ to the winners—netting zero profit.
+
+So, the bookmaker has to guarantee a profit for the bettor on all outcomes while ensuring his own profitability. In order to do so, he must apply a pricing strategy to the odds that ensure a profit. This is where the **overround** comes into play. What follow is an analytical and empirical study of such strategy.
 
 ### Defining a Book
 
@@ -96,6 +94,7 @@ The results below compare the evolution of the bookmakers’ profits under the t
 ![Simulation Results Plot](../../figs/bookies_1.png)
 
 As can be seen after 5000 events:
+
 *   The bookmaker adopting the **Overround Strategy** is highly profitable with an average expected cumulative profit above 20,000 units.
 *   The bookmaker offering **Fair Odds** has profits and losses balancing each other, ending up with no profit.
 *   The bookmaker who is **Mispricing** the outcomes is losing more than -20,000 units.

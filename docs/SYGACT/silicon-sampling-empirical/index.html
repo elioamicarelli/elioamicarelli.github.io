@@ -363,7 +363,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#the-methodology-a-bottom-up-approach" id="toc-the-methodology-a-bottom-up-approach" class="nav-link" data-scroll-target="#the-methodology-a-bottom-up-approach">The Methodology: A Bottom-Up Approach</a></li>
   <li><a href="#the-results-the-success-of-polarization-the-failure-of-salience" id="toc-the-results-the-success-of-polarization-the-failure-of-salience" class="nav-link" data-scroll-target="#the-results-the-success-of-polarization-the-failure-of-salience">The Results: The Success of Polarization, the Failure of Salience</a></li>
-  <li><a href="#key-insight-the-scaling-myth" id="toc-key-insight-the-scaling-myth" class="nav-link" data-scroll-target="#key-insight-the-scaling-myth">Key Insight: The Scaling Myth</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
   </ul></li>
   <li><a href="#the-verdict-why-llms-arent-ready-for-market-research" id="toc-the-verdict-why-llms-arent-ready-for-market-research" class="nav-link" data-scroll-target="#the-verdict-why-llms-arent-ready-for-market-research">The Verdict: Why LLMs Aren’t Ready for Market Research</a>
   <ul class="collapse">
@@ -529,14 +529,15 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="the-results-the-success-of-polarization-the-failure-of-salience">The Results: The Success of Polarization, the Failure of Salience</h3>
 <p>The THESEUS pipeline achieved the highest accuracy yet for high-profile political items, but failed elsewhere:</p>
 <ul>
-<li><strong>Topline Success:</strong> Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) fell within the range of normal sampling noise for a human poll.</li>
+<li><strong>Topline Success:</strong> Error on the Generic Ballot (1.8 MAE) and Trump Approval (2.1 MAE) is close to the range of normal sampling noise for a human poll.</li>
 <li><strong>Low-Salience Failure:</strong> For “out-of-sample” or low-salience topics, the model missed badly. Awareness of recent events in Venezuela was off by <strong>12.8 points</strong>, and federal budget tradeoffs were off by <strong>11 points</strong>.</li>
 <li><strong>The Subgroup Gap:</strong> Even when toplines were accurate, subgroup errors (e.g., by Party ID) remained high, often exceeding <strong>10-13 points</strong>. The LLM systematically biased partisan groups toward the center (50/50).</li>
 </ul>
 </section>
-<section id="key-insight-the-scaling-myth" class="level3">
-<h3 class="anchored" data-anchor-id="key-insight-the-scaling-myth">Key Insight: The Scaling Myth</h3>
-<p>Perhaps the most significant finding was that <strong>increasing the sample size did not help.</strong> Increasing the agent pool from 500 to 5,000 had almost no impact on accuracy. This proves that the errors in synthetic polling are <strong>systematic and structural (model bias)</strong>, not statistical noise. You cannot “spend” your way to accuracy by generating more synthetic respondents.</p>
+<section id="key-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-insights">Key Insights</h3>
+<p>THESEUS works when Party ID, ideology, and vote choice are mainly responsible to explain the response variance. But it struggles when the answer depends on new and still unsettled issues.</p>
+<p>Another interesting finding was that <strong>increasing the sample size did not help.</strong> Increasing the agent pool from 500 to 5,000 had almost no impact on accuracy. This proves that the errors in synthetic polling are <strong>systematic and structural (model bias)</strong>, not statistical noise. You cannot “spend” your way to accuracy by generating more synthetic respondents.</p>
 </section>
 </section>
 <section id="the-verdict-why-llms-arent-ready-for-market-research" class="level2">

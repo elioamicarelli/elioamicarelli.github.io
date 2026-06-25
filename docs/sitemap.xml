@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.elioamicarelli.com/notebooks/wagers-balancing/1.book_overrounding.html</loc>
+    <lastmod>2026-06-24T20:03:14.565Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.elioamicarelli.com/about.html</loc>
     <lastmod>2026-04-14T18:29:34.828Z</lastmod>
   </url>
@@ -10,27 +14,31 @@
   </url>
   <url>
     <loc>https://www.elioamicarelli.com/SYGACT/bookmakers-pricing-tactics/index.html</loc>
-    <lastmod>2026-06-09T16:52:44.850Z</lastmod>
+    <lastmod>2026-06-24T12:01:01.217Z</lastmod>
   </url>
   <url>
-    <loc>https://www.elioamicarelli.com/SYGACT/llms-commercial-applications/index.html</loc>
-    <lastmod>2026-06-13T13:56:20.963Z</lastmod>
+    <loc>https://www.elioamicarelli.com/SYGACT/wagers-balancing/index.html</loc>
+    <lastmod>2026-06-25T00:17:26.133Z</lastmod>
   </url>
   <url>
-    <loc>https://www.elioamicarelli.com/SYGACT/ab-testing-business-failures/index.html</loc>
-    <lastmod>2026-06-09T15:37:00.311Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.elioamicarelli.com/SYGACT.html</loc>
-    <lastmod>2026-06-15T11:53:09.902Z</lastmod>
+    <loc>https://www.elioamicarelli.com/index.html</loc>
+    <lastmod>2026-04-14T19:03:39.920Z</lastmod>
   </url>
   <url>
     <loc>https://www.elioamicarelli.com/silicon_sampling_empirical.html</loc>
     <lastmod>2026-06-13T12:29:06.423Z</lastmod>
   </url>
   <url>
-    <loc>https://www.elioamicarelli.com/index.html</loc>
-    <lastmod>2026-04-14T19:03:39.920Z</lastmod>
+    <loc>https://www.elioamicarelli.com/SYGACT.html</loc>
+    <lastmod>2026-06-24T23:59:22.866Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.elioamicarelli.com/SYGACT/ab-testing-business-failures/index.html</loc>
+    <lastmod>2026-06-09T15:37:00.311Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.elioamicarelli.com/SYGACT/llms-commercial-applications/index.html</loc>
+    <lastmod>2026-06-13T13:56:20.963Z</lastmod>
   </url>
   <url>
     <loc>https://www.elioamicarelli.com/SYGACT/optimize-test-winners/index.html</loc>
@@ -38,6 +46,10 @@
   </url>
   <url>
     <loc>https://www.elioamicarelli.com/SYGACT/silicon-sampling-empirical/index.html</loc>
-    <lastmod>2026-06-17T17:06:35.837Z</lastmod>
+    <lastmod>2026-06-17T17:34:27.288Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.elioamicarelli.com/notebooks/wagers-balancing/wagers-balancing.html</loc>
+    <lastmod>2026-06-24T22:49:01.264Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/notebooks/wagers-balancing/.venv/bin/python",
+    "jupyter.notebookFileRoot": "${workspaceFolder}/notebooks/wagers-balancing"
+}

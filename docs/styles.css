@@ -141,3 +141,26 @@ figcaption, .figure-caption {
     transform: translateX(-50%); /* Move half the track's width for seamless loop */
   }
 }
+
+/* Fix font-size compounding of paragraphs inside list items (loose lists) in blog posts */
+.blog-post .content li p {
+  font-size: 1em !important;
+}
+
+/* Make headers in blog posts stand out with a proper font-size hierarchy */
+.blog-post .content h2 {
+  font-size: 1.6em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.6em !important;
+  font-weight: bold !important;
+}
+
+.blog-post .content h3 {
+  font-size: 1.35em !important;
+  margin-top: 1.3em !important;
+  margin-bottom: 0.5em !important;
+  font-weight: bold !important;
+}
+
+
+

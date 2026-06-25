@@ -5,6 +5,7 @@ description: "A collection of my thoughts and research on systems, games, and hu
 image: figs/profile.jpeg
 listing:
   contents: 
+    - "SYGACT/wagers-balancing/index.qmd"
     - "SYGACT/ab-testing-business-failures/index.qmd"
     - "SYGACT/silicon-sampling-empirical/index.qmd"
     - "SYGACT/llms-commercial-applications/index.qmd"
