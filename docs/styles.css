@@ -16,6 +16,21 @@
   text-align: justify; /* optional, for balanced look */
 }
 
+/* Align homepage body text size with the subtitle size */
+.quarto-about-trestles .about-contents p,
+.quarto-about-trestles .about-contents li {
+  font-size: 1.2em !important;
+}
+
+.quarto-about-trestles .about-contents li p {
+  font-size: 1em !important;
+}
+
+.quarto-about-trestles .about-contents a {
+  font-size: inherit !important;
+}
+
+
 .title-block-banner {
   background-color: var(--light-green-bg);
 }
@@ -181,6 +196,14 @@ mjx-container[display="true"] {
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
   padding: 0.5em 0; /* Add slight padding so scrollbars don't clip the formulas */
 }
+
+/* Hide the author name in the posts listing preview on mobile devices */
+@media (max-width: 768px) {
+  .listing-author {
+    display: none !important;
+  }
+}
+
 
 
 

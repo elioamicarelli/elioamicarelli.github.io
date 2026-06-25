@@ -9,7 +9,7 @@ image: ../../figs/bookies_2.png
 
 Building on the [previous analysis of the overround](https://www.elioamicarelli.com/SYGACT/bookmakers-pricing-tactics/){target="_blank"}, this post shows that a bookmaker's profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors' preferences.
 
-## 1. Expected Profit is Independent of Bettor Preferences
+## Expected Profit is Independent of Bettor Preferences
 
 Let's start by showing that when the bookmaker offers odds consistent with the outcome probabilities, their expected profit is constant: it is completely independent of the bettor preferences $w_i$, and depends only on the total pool of wagers $W_{\text{total}}$ and the overround $\epsilon$. 
 
@@ -84,7 +84,7 @@ It is important to note that when facing biased bettor profiles, the bookmaker's
 
 ![Average Profit converges to the Expected Profit](../../figs/wagers_balancing_1.png)
 
-## 2. The Actual Profit is Impacted by Bettors' Preferences
+## The Actual Profit is Impacted by Bettors' Preferences
 
 Good estimates of outcome probabilities and the application of the overround are not sufficient to protect the bookmaker from risk and liability. If wager shares depart from the outcome probabilities and the bookmaker ignores this distribution, they can suffer significant losses.
 
@@ -105,10 +105,7 @@ $$\begin{aligned}
 &= \frac{W_{\text{total}}^2}{(1+\epsilon)^2} \sum_{i=1}^N \frac{(w_i - P_i)^2}{P_i}
 \end{aligned} \tag{9}$$
 
-The variance of the profit is directly proportional to the **$\chi^2$ distance** between the wager distribution $w$ and the true probability distribution $P$:
-$$\text{Var}(\text{Profit}) = \frac{W_{\text{total}}^2}{(1+\epsilon)^2} D_{\chi^2}(w \parallel P) \tag{10}$$
-
-From this relation, two crucial conclusions can be drawn:
+From this equation, two crucial conclusions can be drawn:
 
 - The variance is zero if and only if $w_i = P_i$ for all $i$. In this case, the bookmaker is perfectly hedged and earns a risk-free profit of $W_{\text{total}} \frac{\epsilon}{1+\epsilon}$ regardless of which outcome occurs.
 
@@ -137,7 +134,7 @@ As can be seen, both bettor profiles generate a considerable risk of drawdown fo
 ![Distribution of Maximum Drawdown](../../figs/wagers_balancing_4.png)
 
 
-## 3. Conclusions
+## Conclusions
 
 The overround guarantees an actual profit for the bookmaker only when the bettors' preferences are aligned with the outcome probabilities. 
 

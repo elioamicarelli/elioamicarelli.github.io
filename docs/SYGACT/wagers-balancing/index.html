@@ -336,15 +336,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#expected-profit-is-independent-of-bettor-preferences" id="toc-expected-profit-is-independent-of-bettor-preferences" class="nav-link active" data-scroll-target="#expected-profit-is-independent-of-bettor-preferences">1. Expected Profit is Independent of Bettor Preferences</a>
+  <li><a href="#expected-profit-is-independent-of-bettor-preferences" id="toc-expected-profit-is-independent-of-bettor-preferences" class="nav-link active" data-scroll-target="#expected-profit-is-independent-of-bettor-preferences">Expected Profit is Independent of Bettor Preferences</a>
   <ul class="collapse">
   <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
   </ul></li>
-  <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">2. The Actual Profit is Impacted by Bettors’ Preferences</a>
+  <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</a>
   <ul class="collapse">
   <li><a href="#simulation-1" id="toc-simulation-1" class="nav-link" data-scroll-target="#simulation-1">Simulation</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">3. Conclusions</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
     </div>
@@ -394,7 +394,7 @@ window.Quarto = {
 
 <p>Building on the <a href="https://www.elioamicarelli.com/SYGACT/bookmakers-pricing-tactics/" target="_blank">previous analysis of the overround</a>, this post shows that a bookmaker’s profit is contingent upon the distribution of wagers. This highlights that the overround guarantees profit only when certain conditions of bettor behavior are met. In order to minimize risk, balancing the book will require additional approaches to account for bettors’ preferences.</p>
 <section id="expected-profit-is-independent-of-bettor-preferences" class="level2">
-<h2 class="anchored" data-anchor-id="expected-profit-is-independent-of-bettor-preferences">1. Expected Profit is Independent of Bettor Preferences</h2>
+<h2 class="anchored" data-anchor-id="expected-profit-is-independent-of-bettor-preferences">Expected Profit is Independent of Bettor Preferences</h2>
 <p>Let’s start by showing that when the bookmaker offers odds consistent with the outcome probabilities, their expected profit is constant: it is completely independent of the bettor preferences <span class="math inline">\(w_i\)</span>, and depends only on the total pool of wagers <span class="math inline">\(W_{\text{total}}\)</span> and the overround <span class="math inline">\(\epsilon\)</span>.</p>
 <p>Consider a sporting event with <span class="math inline">\(N\)</span> mutually exclusive outcomes <span class="math inline">\(R_1, R_2, \dots, R_N\)</span>.</p>
 <ul>
@@ -447,7 +447,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 </section>
 </section>
 <section id="the-actual-profit-is-impacted-by-bettors-preferences" class="level2">
-<h2 class="anchored" data-anchor-id="the-actual-profit-is-impacted-by-bettors-preferences">2. The Actual Profit is Impacted by Bettors’ Preferences</h2>
+<h2 class="anchored" data-anchor-id="the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</h2>
 <p>Good estimates of outcome probabilities and the application of the overround are not sufficient to protect the bookmaker from risk and liability. If wager shares depart from the outcome probabilities and the bookmaker ignores this distribution, they can suffer significant losses.</p>
 <p>To show this, consider the variance of the bookmaker’s profit across outcomes: <span class="math display">\[\text{Var}(\text{Profit}) = \sum_{i=1}^N P_i \left( \text{Profit}_i - E[\text{Profit}] \right)^2 \tag{7}\]</span></p>
 <p>Substituting the formulas for <span class="math inline">\(\text{Profit}_i\)</span> and <span class="math inline">\(E[\text{Profit}]\)</span>: <span class="math display">\[\begin{aligned}
@@ -460,8 +460,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 &amp;= \frac{W_{\text{total}}^2}{(1+\epsilon)^2} \sum_{i=1}^N P_i \left( \frac{P_i - w_i}{P_i} \right)^2 \\
 &amp;= \frac{W_{\text{total}}^2}{(1+\epsilon)^2} \sum_{i=1}^N \frac{(w_i - P_i)^2}{P_i}
 \end{aligned} \tag{9}\]</span></p>
-<p>The variance of the profit is directly proportional to the <strong><span class="math inline">\(\chi^2\)</span> distance</strong> between the wager distribution <span class="math inline">\(w\)</span> and the true probability distribution <span class="math inline">\(P\)</span>: <span class="math display">\[\text{Var}(\text{Profit}) = \frac{W_{\text{total}}^2}{(1+\epsilon)^2} D_{\chi^2}(w \parallel P) \tag{10}\]</span></p>
-<p>From this relation, two crucial conclusions can be drawn:</p>
+<p>From this equation, two crucial conclusions can be drawn:</p>
 <ul>
 <li><p>The variance is zero if and only if <span class="math inline">\(w_i = P_i\)</span> for all <span class="math inline">\(i\)</span>. In this case, the bookmaker is perfectly hedged and earns a risk-free profit of <span class="math inline">\(W_{\text{total}} \frac{\epsilon}{1+\epsilon}\)</span> regardless of which outcome occurs.</p></li>
 <li><p>If the wager distribution <span class="math inline">\(w\)</span> deviates from the true probabilities <span class="math inline">\(P\)</span>, the variance increases. If <span class="math inline">\(w_i &gt; P_i (1+\epsilon)\)</span> for some outcome <span class="math inline">\(i\)</span>, the realized profit <span class="math inline">\(\text{Profit}_i\)</span> becomes negative, meaning the bookmaker will suffer a net loss if outcome <span class="math inline">\(R_i\)</span> is realized.</p></li>
@@ -496,7 +495,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 </section>
 </section>
 <section id="conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions">3. Conclusions</h2>
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
 <p>The overround guarantees an actual profit for the bookmaker only when the bettors’ preferences are aligned with the outcome probabilities.</p>
 <p>In contrast, when the bettors’ preferences deviate from the outcome probabilities, the bookmaker’s actual profit can be significantly lower than the expected profit.</p>
 <p>The risk of large drawdowns emphasizes the critical importance for bookmakers to actively manage and balance their books, rather than passively accepting the distribution of wagers.</p>
