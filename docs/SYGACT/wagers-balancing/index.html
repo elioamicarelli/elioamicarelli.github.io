@@ -403,15 +403,24 @@ window.Quarto = {
 <li><p>Let <span class="math inline">\(W_i\)</span> be the <strong>total amount wagered</strong> by bettors on outcome <span class="math inline">\(R_i\)</span>, and <span class="math inline">\(W_{\text{total}} = \sum_{i=1}^N W_i\)</span> be the total pool of wagers.</p></li>
 <li><p>Let <span class="math inline">\(w_i = \frac{W_i}{W_{\text{total}}}\)</span> be the <strong>proportion of wagers</strong> placed on outcome <span class="math inline">\(R_i\)</span>, where <span class="math inline">\(\sum_{i=1}^N w_i = 1\)</span>.</p></li>
 </ul>
-<p>If outcome <span class="math inline">\(R_i\)</span> is realized, the bookmaker must pay out <span class="math inline">\(O_i W_i\)</span> to winning bettors. The bookmaker’s realized profit is: <span class="math display">\[\text{Profit}_i = W_{\text{total}} - O_i W_i = W_{\text{total}} (1 - O_i w_i) \tag{1}\]</span></p>
-<p>The expected profit for the bookmaker is the probability-weighted sum of the profit under each outcome: <span class="math display">\[E[\text{Profit}] = \sum_{i=1}^N P_i \text{Profit}_i = W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i O_i w_i \right) \tag{2}\]</span></p>
+<p>If outcome <span class="math inline">\(R_i\)</span> is realized, the bookmaker must pay out <span class="math inline">\(O_i W_i\)</span> to winning bettors. The bookmaker’s realized profit is: <span class="math display">\[\begin{aligned}
+\text{Profit}_i &amp;= W_{\text{total}} - O_i W_i \\
+&amp;= W_{\text{total}} (1 - O_i w_i)
+\end{aligned} \tag{1}\]</span></p>
+<p>The expected profit for the bookmaker is the probability-weighted sum of the profit under each outcome: <span class="math display">\[\begin{aligned}
+E[\text{Profit}] &amp;= \sum_{i=1}^N P_i \text{Profit}_i \\
+&amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i O_i w_i \right)
+\end{aligned} \tag{2}\]</span></p>
 <p>An omniscient bookmaker knows the true probabilities <span class="math inline">\(P_i\)</span>. To guarantee an expected profit, they set the decimal odds <span class="math inline">\(O_i\)</span> by inflating the true probabilities with an overround <span class="math inline">\(\epsilon &gt; 0\)</span>. The implied probabilities <span class="math inline">\(\hat{P}_i\)</span> are set as: <span class="math display">\[\hat{P}_i = P_i (1 + \epsilon) \tag{3}\]</span> So that the sum of implied probabilities is <span class="math inline">\(\sum_{i=1}^N \hat{P}_i = 1 + \epsilon\)</span>.</p>
 <p>The decimal odds are the reciprocal of the implied probabilities: <span class="math display">\[O_i = \frac{1}{\hat{P}_i} = \frac{1}{P_i (1 + \epsilon)} \tag{4}\]</span></p>
 <p>Substituting <span class="math inline">\(O_i\)</span> into the expected profit equation: <span class="math display">\[\begin{aligned}
 E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \frac{1}{P_i (1 + \epsilon)} \right) w_i \right) \\
 &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \sum_{i=1}^N w_i \right)
 \end{aligned} \tag{5}\]</span></p>
-<p>Since <span class="math inline">\(\sum_{i=1}^N w_i = 1\)</span>, the bettors’ preferences become irrelevant in determining the expected profit: <span class="math display">\[E[\text{Profit}] = W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) = W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right) \tag{6}\]</span></p>
+<p>Since <span class="math inline">\(\sum_{i=1}^N w_i = 1\)</span>, the bettors’ preferences become irrelevant in determining the expected profit: <span class="math display">\[\begin{aligned}
+E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) \\
+&amp;= W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right)
+\end{aligned}\tag{6}\]</span></p>
 <section id="simulation" class="level3">
 <h3 class="anchored" data-anchor-id="simulation">Simulation</h3>
 <p>In this Monte Carlo simulation, I test the impact of different bettor allocation preferences on the bookmaker’s average profit.</p>
@@ -425,7 +434,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \fra
 <li><p><strong>Underdog Bias (<span class="math inline">\(w = [0.3, 0.7]\)</span>)</strong>: Bettors place <span class="math inline">\(30\%\)</span> on the Favorite and <span class="math inline">\(70\%\)</span> on the Underdog (over-backing the Underdog).</p></li>
 </ol>
 <p><strong>Runs</strong></p>
-<p>I simulate 100 independent series of 10,000 consecutive events each. The outcomes of each event are sampled randomly from the true distribution <span class="math inline">\(P\)</span>. For each event, a constant total wager volume of <span class="math inline">\(W_{\text{total}} = 100\)</span> units is placed. The wager preferences represent the share of the total pool placed on each outcome. We compute the running average profit for each series.</p>
+<p>I simulate 100 independent series of 10,000 consecutive events each. The outcomes of each event are sampled randomly from the true distribution <span class="math inline">\(P\)</span>. For each event, a constant total wager volume of <span class="math inline">\(W_{\text{total}} = 100\)</span> units is placed. The wager preferences represent the share of the total pool placed on each outcome. I compute the running average profit for each series.</p>
 <p><strong>Results</strong></p>
 <p>As shown in the plot below, in the long run the bookmaker’s running average profit converges to the expectation regardless of the bettors’ preference structure (<span class="math inline">\(E[\text{Profit}] \approx 4.76\)</span> units). <strong>Does this mean that the bookmaker can treat the bettors’ preferences as a nuisance when balancing their book? Absolutely not!</strong></p>
 <p>It is important to note that when facing biased bettor profiles, the bookmaker’s average profit presents considerable variability before converging. In the next section, I show that the variability introduced by biased bettor preferences is a source of risk and potential liability for the bookmaker.</p>
@@ -452,7 +461,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \fra
 &amp;= \frac{W_{\text{total}}^2}{(1+\epsilon)^2} \sum_{i=1}^N \frac{(w_i - P_i)^2}{P_i}
 \end{aligned} \tag{9}\]</span></p>
 <p>The variance of the profit is directly proportional to the <strong><span class="math inline">\(\chi^2\)</span> distance</strong> between the wager distribution <span class="math inline">\(w\)</span> and the true probability distribution <span class="math inline">\(P\)</span>: <span class="math display">\[\text{Var}(\text{Profit}) = \frac{W_{\text{total}}^2}{(1+\epsilon)^2} D_{\chi^2}(w \parallel P) \tag{10}\]</span></p>
-<p>From this relation, we can draw two crucial conclusions:</p>
+<p>From this relation, two crucial conclusions can be drawn:</p>
 <ul>
 <li><p>The variance is zero if and only if <span class="math inline">\(w_i = P_i\)</span> for all <span class="math inline">\(i\)</span>. In this case, the bookmaker is perfectly hedged and earns a risk-free profit of <span class="math inline">\(W_{\text{total}} \frac{\epsilon}{1+\epsilon}\)</span> regardless of which outcome occurs.</p></li>
 <li><p>If the wager distribution <span class="math inline">\(w\)</span> deviates from the true probabilities <span class="math inline">\(P\)</span>, the variance increases. If <span class="math inline">\(w_i &gt; P_i (1+\epsilon)\)</span> for some outcome <span class="math inline">\(i\)</span>, the realized profit <span class="math inline">\(\text{Profit}_i\)</span> becomes negative, meaning the bookmaker will suffer a net loss if outcome <span class="math inline">\(R_i\)</span> is realized.</p></li>
@@ -469,7 +478,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \fra
 </div>
 <p>Instead of looking at just a handful of series, the plot below shows the distributions of the final cumulative profit with 50,000 simulated series for each bettor preference structure.</p>
 <p>As can be seen, the distributions in all cases have a mean consistent with the expectation. However, while the No Bias case has no profit variance (left plot), in both biased cases the variance across the different realizations is considerable, and the actual final profit can be zero or less (right plot).</p>
-<p>Furthermore, aside from the final profit, we recorded that 87.936% of the Favorite Bias simulations dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.</p>
+<p>Furthermore, aside from the final profit, I recorded that 87.936% of the Favorite Bias simulations dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_3.png" class="img-fluid figure-img"></p>

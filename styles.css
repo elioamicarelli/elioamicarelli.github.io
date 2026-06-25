@@ -69,6 +69,10 @@
   margin-top: 0 !important;
 }
 
+.quarto-title-meta-contents {
+  white-space: nowrap;
+}
+
 .quarto-title-meta-contents p {
   margin: 0 !important;
 }
@@ -166,6 +170,18 @@ figcaption, .figure-caption {
 .blog-post .content a {
   font-size: inherit !important;
 }
+
+/* Ensure block mathematical formulas are responsive on mobile/small screens */
+.math.display,
+.katex-display,
+mjx-container[display="true"] {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+  padding: 0.5em 0; /* Add slight padding so scrollbars don't clip the formulas */
+}
+
 
 
 

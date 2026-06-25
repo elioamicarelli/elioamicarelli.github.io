@@ -24,10 +24,16 @@ Consider a sporting event with $N$ mutually exclusive outcomes $R_1, R_2, \dots,
 - Let $w_i = \frac{W_i}{W_{\text{total}}}$ be the **proportion of wagers** placed on outcome $R_i$, where $\sum_{i=1}^N w_i = 1$.
 
 If outcome $R_i$ is realized, the bookmaker must pay out $O_i W_i$ to winning bettors. The bookmaker's realized profit is:
-$$\text{Profit}_i = W_{\text{total}} - O_i W_i = W_{\text{total}} (1 - O_i w_i) \tag{1}$$
+$$\begin{aligned}
+\text{Profit}_i &= W_{\text{total}} - O_i W_i \\
+&= W_{\text{total}} (1 - O_i w_i) 
+\end{aligned} \tag{1}$$
 
 The expected profit for the bookmaker is the probability-weighted sum of the profit under each outcome:
-$$E[\text{Profit}] = \sum_{i=1}^N P_i \text{Profit}_i = W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i O_i w_i \right) \tag{2}$$
+$$\begin{aligned}
+E[\text{Profit}] &= \sum_{i=1}^N P_i \text{Profit}_i \\
+&= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i O_i w_i \right)
+\end{aligned} \tag{2}$$
 
 An omniscient bookmaker knows the true probabilities $P_i$. To guarantee an expected profit, they set the decimal odds $O_i$ by inflating the true probabilities with an overround $\epsilon > 0$. The implied probabilities $\hat{P}_i$ are set as:
 $$\hat{P}_i = P_i (1 + \epsilon) \tag{3}$$
@@ -43,7 +49,10 @@ E[\text{Profit}] &= W_{\text{total}} \left( 1 - \sum_{i=1}^N P_i \left( \frac{1}
 \end{aligned} \tag{5}$$
 
 Since $\sum_{i=1}^N w_i = 1$, the bettors' preferences become irrelevant in determining the expected profit:
-$$E[\text{Profit}] = W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) = W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right) \tag{6}$$
+$$\begin{aligned}
+E[\text{Profit}] &= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \right) \\
+&= W_{\text{total}} \left( \frac{\epsilon}{1 + \epsilon} \right) 
+\end{aligned}\tag{6}$$
 
 ### Simulation
 
@@ -65,7 +74,7 @@ I consider three distinct structures for bettor preferences:
 
 **Runs**
 
-I simulate 100 independent series of 10,000 consecutive events each. The outcomes of each event are sampled randomly from the true distribution $P$. For each event, a constant total wager volume of $W_{\text{total}} = 100$ units is placed. The wager preferences represent the share of the total pool placed on each outcome. We compute the running average profit for each series.
+I simulate 100 independent series of 10,000 consecutive events each. The outcomes of each event are sampled randomly from the true distribution $P$. For each event, a constant total wager volume of $W_{\text{total}} = 100$ units is placed. The wager preferences represent the share of the total pool placed on each outcome. I compute the running average profit for each series.
 
 **Results**
 
@@ -99,7 +108,7 @@ $$\begin{aligned}
 The variance of the profit is directly proportional to the **$\chi^2$ distance** between the wager distribution $w$ and the true probability distribution $P$:
 $$\text{Var}(\text{Profit}) = \frac{W_{\text{total}}^2}{(1+\epsilon)^2} D_{\chi^2}(w \parallel P) \tag{10}$$
 
-From this relation, we can draw two crucial conclusions:
+From this relation, two crucial conclusions can be drawn:
 
 - The variance is zero if and only if $w_i = P_i$ for all $i$. In this case, the bookmaker is perfectly hedged and earns a risk-free profit of $W_{\text{total}} \frac{\epsilon}{1+\epsilon}$ regardless of which outcome occurs.
 
@@ -117,7 +126,7 @@ Instead of looking at just a handful of series, the plot below shows the distrib
 
 As can be seen, the distributions in all cases have a mean consistent with the expectation. However, while the No Bias case has no profit variance (left plot), in both biased cases the variance across the different realizations is considerable, and the actual final profit can be zero or less (right plot). 
 
-Furthermore, aside from the final profit, we recorded that 87.936% of the Favorite Bias simulations dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.
+Furthermore, aside from the final profit, I recorded that 87.936% of the Favorite Bias simulations dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.
 
 ![Distribution of Final Cumulative Profit](../../figs/wagers_balancing_3.png)
 
