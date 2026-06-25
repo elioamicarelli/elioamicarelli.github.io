@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "About Elio Amicarelli, a Senior Applied Statistician and Product Data Scientist with extensive experience spanning startups, enterprises, and research institutions."
 page-layout: article
 toc: false
 ---

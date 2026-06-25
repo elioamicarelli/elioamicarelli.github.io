@@ -1,6 +1,7 @@
 ---
 title: "Elio Amicarelli"
 subtitle: "I lead data projects, unlock behavioral insights, and design games in-between"
+description: "Welcome to the official portfolio of Elio Amicarelli, an Applied Statistician and Data Scientist specializing in product analytics, behavioral insights, and system optimization."
 image: "figs/profile.jpeg"
 toc: false
 about:

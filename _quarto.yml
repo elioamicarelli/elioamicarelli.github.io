@@ -4,6 +4,7 @@ project:
 website:
   title: "Elio Amicarelli"
   site-url: https://www.elioamicarelli.com
+  description: "Official portfolio of Elio Amicarelli, an Applied Statistician and Data Scientist with 10+ years of experience leading data projects, uncovering behavioral insights, and designing games."
   favicon: figs/fv.png
   google-analytics: "G-VLRS3DJ725"
   open-graph:
@@ -30,6 +31,7 @@ format:
     highlight-style: dracula
     css: styles.css
     toc: true
+    include-in-header: seo-metadata.html
     include-after-body:
       text: |
         <script>
