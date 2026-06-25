@@ -30,13 +30,19 @@ $code-block-color: $dark-orange;
 // fonts
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: "Cormorant Garamond", serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
   font-size: 110% !important;
 }
 
 // blog article body font
 .blog-post .content {
-  h1, h2, h3, h4, h5, h6, p, a, li {
+  h1, h2, h3, h4, h5, h6, p, li {
     font-size: 125% !important;
+  }
+  a {
+    font-size: inherit !important;
   }
 }
 
