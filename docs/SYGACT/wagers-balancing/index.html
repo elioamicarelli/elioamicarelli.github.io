@@ -477,7 +477,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 </div>
 <p>Instead of looking at just a handful of series, the plot below shows the distributions of the final cumulative profit with 50,000 simulated series for each bettor preference structure.</p>
 <p>As can be seen, the distributions in all cases have a mean consistent with the expectation. However, while the No Bias case has no profit variance (left plot), in both biased cases the variance across the different realizations is considerable, and the actual final profit can be zero or less (right plot).</p>
-<p>Furthermore, aside from the final profit, I recorded that 87.936% of the Favorite Bias simulations dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.</p>
+<p>Furthermore, aside from the final profit, I recorded that in 87.936% of the Favorite Bias simulations the cumulative profit dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_3.png" class="img-fluid figure-img"></p>
@@ -498,8 +498,9 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
 <p>The overround guarantees an actual profit for the bookmaker only when the bettors’ preferences are aligned with the outcome probabilities.</p>
 <p>In contrast, when the bettors’ preferences deviate from the outcome probabilities, the bookmaker’s actual profit can be significantly lower than the expected profit.</p>
-<p>The risk of large drawdowns emphasizes the critical importance for bookmakers to actively manage and balance their books, rather than passively accepting the distribution of wagers.</p>
-<p>In the next post of this series, I will discuss how bookmakers account for bettors’ behavior to balance their books and protect their profit.</p>
+<p>Even a bookmaker that perfectly estimates the true outcome probabilities and sets the odds accordingly would suffer large losses if the bettors’ preferences are not aligned with the outcome probabilities.</p>
+<p>Overall, the risk of large drawdowns emphasizes the critical importance for bookmakers to actively manage and balance their books according to bettors preferences, rather than passively accepting the distribution of wagers.</p>
+<p>In the next post of this series, I will show how bookmakers account for bettors’ behavior to balance their books and protect their profit.</p>
 
 
 </section>
