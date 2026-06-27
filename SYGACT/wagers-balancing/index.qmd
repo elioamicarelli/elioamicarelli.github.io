@@ -151,7 +151,7 @@ This risk exposure is highly asymmetric:
 
 It is important to note that the previous analysis modeled only the mode (the most frequent value) of the maximum drawdown distribution. In practice, the risk exposure can be substantially more severe due to the heavily right-skewed, long-tailed nature of these distributions.
 
-To capture these extreme risk scenarios, the figure that follow replicates the analysis using the 99th percentile of the maximum drawdown distribution instead of the mode. 
+To capture these extreme risk scenarios, the following figure replicates the analysis using the 99th percentile of the maximum drawdown distribution instead of the mode.
 
 ![Figure 6](../../figs/wagers_balancing_6.png)
 
