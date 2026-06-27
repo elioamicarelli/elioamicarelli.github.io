@@ -82,7 +82,7 @@ As shown in the plot below, in the long run the bookmaker's running average prof
 
 It is important to note that when facing biased bettor profiles, the bookmaker's average profit presents considerable variability before converging. In the next section, I show that the variability introduced by biased bettor preferences is a source of risk and potential liability for the bookmaker.
 
-![Average Profit converges to the Expected Profit](../../figs/wagers_balancing_1.png)
+![Figure 1](../../figs/wagers_balancing_1.png)
 
 ## The Actual Profit is Impacted by Bettors' Preferences
 
@@ -117,7 +117,7 @@ I use a battery of simulations to examine how the bookmaker's cumulative profit 
 
 The first plot shows three cumulative profit series for each preference structure. When wagers are placed consistently with the outcome probabilities ('No Bias'), the bookmaker's profit increases linearly with zero deviation from the expectation. On the contrary, in scenarios where wager allocation departs from the underlying outcome probabilities, the profit exhibits massive swings.
 
-![Bookmaker Cumulative Profits](../../figs/wagers_balancing_2.png)
+![Figure 2](../../figs/wagers_balancing_2.png)
 
 Instead of looking at just a handful of series, the plot below shows the distributions of the final cumulative profit with 50,000 simulated series for each bettor preference structure.
 
@@ -125,14 +125,41 @@ As can be seen, the distributions in all cases have a mean consistent with the e
 
 Furthermore, aside from the final profit, I recorded that in 87.936% of the Favorite Bias simulations the cumulative profit dropped to zero or below at some point, while this figure rose to 91.266% for the Underdog Bias simulations.
 
-![Distribution of Final Cumulative Profit](../../figs/wagers_balancing_3.png)
+![Figure 3](../../figs/wagers_balancing_3.png)
 
 Instead of considering the final profit, the next plot shows the distribution of the maximum drawdown defined as the largest drop from a historical peak before a new peak is achieved. For the sake of scale clarity, the situation with No Bias is excluded from the plot since it increases monotonically at each step (std = 0.00), meaning it has exactly zero drawdown on all paths.
 
 As can be seen, both bettor profiles generate a considerable risk of drawdown for the bookmaker, with the Underdog Bias profile being the most severe.
 
-![Distribution of Maximum Drawdown](../../figs/wagers_balancing_4.png)
+![Figure 4](../../figs/wagers_balancing_4.png)
 
+## Sensitivity of Drawdown Risk to Bettor Preferences
+
+I now move to examining how the magnitude of the drawdown changes under different scenarios.
+
+To visualize this relationship, the figure below plots the deviation of wager distribution on the against the bookmaker's risk-to-reward ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent expected drawdown to the average total profit.
+
+![Figure 5](../../figs/wagers_balancing_5.png)
+
+The bookmaker's risk drops to zero when the wager distribution aligns perfectly with the true outcome probabilities (where the x-axis equals zero). However, as bettor preferences depart from these underlying winning probabilities, the relative magnitude of the expected drawdown increases.
+
+This risk exposure is highly asymmetric:
+
+- Underdog Bias (Negative Deviation): When the share of wagers shifts heavily toward underdogs (negative values on the x-axis), the drawdown risk increases dramatically. This effect is compounded when the underlying winning probabilities are highly skewed or uneven.
+
+- Favorite Bias (Positive Deviation): Conversely, when overbetting occurs on the favorite's side (positive values on the x-axis), the drawdown risk escalates at a much slower, more linear rate.
+
+It is important to note that the previous analysis modeled only the mode (the most frequent value) of the maximum drawdown distribution. In practice, the risk exposure can be substantially more severe due to the heavily right-skewed, long-tailed nature of these distributions.
+
+To capture these extreme risk scenarios, the figure that follow replicates the analysis using the 99th percentile of the maximum drawdown distribution instead of the mode. 
+
+![Figure 6](../../figs/wagers_balancing_6.png)
+
+As can be seen by comparing the two figures:
+
+- The scale of the y-axis increases dramatically. While the modal drawdown relative to total profit peaked near 1.4 for the most skewed probability curve (P=[0.90,0.10]), the 99th percentile drawdown skyrockets past 4.0. This demonstrates that the bookmaker's potential losses in worst-case scenarios vastly outpace the most likely outcome.
+
+- The asymmetric risk penalty for overbetting the underdog becomes even more pronounced. At the 99th percentile, a negative deviation creates a highly volatile risk profile, emphasizing just how vulnerable the bookmaker becomes to tail-risk events when public preference concentrates on the underdog.
 
 ## Conclusions
 

@@ -361,6 +361,7 @@ window.Quarto = {
   <li><a href="#simulation-study" id="toc-simulation-study" class="nav-link" data-scroll-target="#simulation-study">Simulation Study</a></li>
   <li><a href="#the-actual-profit-is-impacted-by-bettors-preferences" id="toc-the-actual-profit-is-impacted-by-bettors-preferences" class="nav-link" data-scroll-target="#the-actual-profit-is-impacted-by-bettors-preferences">The Actual Profit is Impacted by Bettors’ Preferences</a></li>
   <li><a href="#simulation-study-1" id="toc-simulation-study-1" class="nav-link" data-scroll-target="#simulation-study-1">Simulation Study</a></li>
+  <li><a href="#sensitivity-of-drawdown-risk-to-bettor-preferences" id="toc-sensitivity-of-drawdown-risk-to-bettor-preferences" class="nav-link" data-scroll-target="#sensitivity-of-drawdown-risk-to-bettor-preferences">Sensitivity of Drawdown Risk to Bettor Preferences</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
@@ -459,7 +460,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_1.png" class="img-fluid figure-img"></p>
-<figcaption>Average Profit converges to the Expected Profit</figcaption>
+<figcaption>Figure 1</figcaption>
 </figure>
 </div>
 </section>
@@ -490,7 +491,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_2.png" class="img-fluid figure-img"></p>
-<figcaption>Bookmaker Cumulative Profits</figcaption>
+<figcaption>Figure 2</figcaption>
 </figure>
 </div>
 <p>Instead of looking at just a handful of series, the plot below shows the distributions of the final cumulative profit with 50,000 simulated series for each bettor preference structure.</p>
@@ -499,7 +500,7 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_3.png" class="img-fluid figure-img"></p>
-<figcaption>Distribution of Final Cumulative Profit</figcaption>
+<figcaption>Figure 3</figcaption>
 </figure>
 </div>
 <p>Instead of considering the final profit, the next plot shows the distribution of the maximum drawdown defined as the largest drop from a historical peak before a new peak is achieved. For the sake of scale clarity, the situation with No Bias is excluded from the plot since it increases monotonically at each step (std = 0.00), meaning it has exactly zero drawdown on all paths.</p>
@@ -507,9 +508,39 @@ E[\text{Profit}] &amp;= W_{\text{total}} \left( 1 - \frac{1}{1 + \epsilon} \righ
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../figs/wagers_balancing_4.png" class="img-fluid figure-img"></p>
-<figcaption>Distribution of Maximum Drawdown</figcaption>
+<figcaption>Figure 4</figcaption>
 </figure>
 </div>
+</section>
+<section id="sensitivity-of-drawdown-risk-to-bettor-preferences" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-of-drawdown-risk-to-bettor-preferences">Sensitivity of Drawdown Risk to Bettor Preferences</h2>
+<p>I now move to examining how the magnitude of the drawdown changes under different scenarios.</p>
+<p>To visualize this relationship, the figure below plots the deviation of wager distribution on the against the bookmaker’s risk-to-reward ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent expected drawdown to the average total profit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../figs/wagers_balancing_5.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5</figcaption>
+</figure>
+</div>
+<p>The bookmaker’s risk drops to zero when the wager distribution aligns perfectly with the true outcome probabilities (where the x-axis equals zero). However, as bettor preferences depart from these underlying winning probabilities, the relative magnitude of the expected drawdown increases.</p>
+<p>This risk exposure is highly asymmetric:</p>
+<ul>
+<li><p>Underdog Bias (Negative Deviation): When the share of wagers shifts heavily toward underdogs (negative values on the x-axis), the drawdown risk increases dramatically. This effect is compounded when the underlying winning probabilities are highly skewed or uneven.</p></li>
+<li><p>Favorite Bias (Positive Deviation): Conversely, when overbetting occurs on the favorite’s side (positive values on the x-axis), the drawdown risk escalates at a much slower, more linear rate.</p></li>
+</ul>
+<p>It is important to note that the previous analysis modeled only the mode (the most frequent value) of the maximum drawdown distribution. In practice, the risk exposure can be substantially more severe due to the heavily right-skewed, long-tailed nature of these distributions.</p>
+<p>To capture these extreme risk scenarios, the figure that follow replicates the analysis using the 99th percentile of the maximum drawdown distribution instead of the mode.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../figs/wagers_balancing_6.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 6</figcaption>
+</figure>
+</div>
+<p>As can be seen by comparing the two figures:</p>
+<ul>
+<li><p>The scale of the y-axis increases dramatically. While the modal drawdown relative to total profit peaked near 1.4 for the most skewed probability curve (P=[0.90,0.10]), the 99th percentile drawdown skyrockets past 4.0. This demonstrates that the bookmaker’s potential losses in worst-case scenarios vastly outpace the most likely outcome.</p></li>
+<li><p>The asymmetric risk penalty for overbetting the underdog becomes even more pronounced. At the 99th percentile, a negative deviation creates a highly volatile risk profile, emphasizing just how vulnerable the bookmaker becomes to tail-risk events when public preference concentrates on the underdog.</p></li>
+</ul>
 </section>
 <section id="conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
