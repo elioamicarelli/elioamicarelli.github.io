@@ -137,7 +137,7 @@ As can be seen, both bettor profiles generate a considerable risk of drawdown fo
 
 I now move to examining how the magnitude of the drawdown changes under different scenarios.
 
-To visualize this relationship, the figure below plots the deviation of wager distribution on the against the bookmaker's risk-to-reward ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent expected drawdown to the average total profit.
+To visualize this relationship, the figure below plots the deviation of wager distribution from outcomes probabilities against the bookmaker's risk-to-reward ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent maximum drawdown to the average total profit.
 
 ![Figure 5](../../figs/wagers_balancing_5.png)
 
@@ -145,9 +145,9 @@ The bookmaker's risk drops to zero when the wager distribution aligns perfectly 
 
 This risk exposure is highly asymmetric:
 
-- Underdog Bias (Negative Deviation): When the share of wagers shifts heavily toward underdogs (negative values on the x-axis), the drawdown risk increases dramatically. This effect is compounded when the underlying winning probabilities are highly skewed or uneven.
+- When the share of wagers shifts heavily toward underdogs (negative values on the x-axis), the drawdown risk increases dramatically. This effect is compounded when the underlying winning probabilities are highly skewed or uneven.
 
-- Favorite Bias (Positive Deviation): Conversely, when overbetting occurs on the favorite's side (positive values on the x-axis), the drawdown risk escalates at a much slower, more linear rate.
+- Conversely, when overbetting occurs on the favorite's side (positive values on the x-axis), the drawdown risk escalates at a much slower, more linear rate.
 
 It is important to note that the previous analysis modeled only the mode (the most frequent value) of the maximum drawdown distribution. In practice, the risk exposure can be substantially more severe due to the heavily right-skewed, long-tailed nature of these distributions.
 
