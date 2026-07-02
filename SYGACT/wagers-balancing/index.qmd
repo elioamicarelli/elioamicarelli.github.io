@@ -137,7 +137,7 @@ As can be seen, both bettor profiles generate a considerable risk of drawdown fo
 
 I now move to examining how the magnitude of the drawdown changes under different scenarios.
 
-To visualize this relationship, the figure below plots the deviation of wager distribution from outcomes probabilities against the bookmaker's risk-to-reward ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent maximum drawdown to the average total profit.
+To visualize this relationship, the figure below plots the deviation of wager distribution from outcomes probabilities against the bookmaker's drawdown-to-profit ratio. The x-axis shows how much the actual distribution of bets on the favorite deviates from the true underlying probabilities of the outcomes. The y-axis represents the ratio of the most frequent maximum drawdown to the average total profit.
 
 ![Figure 5](../../figs/wagers_balancing_5.png)
 
